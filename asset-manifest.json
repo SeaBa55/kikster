@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/kikster/static/css/main.545fbc37.css",
-    "main.js": "/kikster/static/js/main.f92cee53.js",
+    "main.js": "/kikster/static/js/main.f4af23ee.js",
     "static/js/787.73b8bd42.chunk.js": "/kikster/static/js/787.73b8bd42.chunk.js",
     "index.html": "/kikster/index.html",
     "main.545fbc37.css.map": "/kikster/static/css/main.545fbc37.css.map",
-    "main.f92cee53.js.map": "/kikster/static/js/main.f92cee53.js.map",
+    "main.f4af23ee.js.map": "/kikster/static/js/main.f4af23ee.js.map",
     "787.73b8bd42.chunk.js.map": "/kikster/static/js/787.73b8bd42.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.545fbc37.css",
-    "static/js/main.f92cee53.js"
+    "static/js/main.f4af23ee.js"
   ]
 }

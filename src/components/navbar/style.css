@@ -1,0 +1,24 @@
+.nav-bar {
+    /* background-image: linear-gradient(rgba(255, 255, 255, 0), rgb(41, 41, 41), rgba(255, 255, 255, 0)); */
+    background-image: linear-gradient(rgb(41, 41, 41), rgb(41, 41, 41), rgba(255, 255, 255, 0));
+}
+
+.nav-bar-name{
+    /* text-shadow: 2px 1px red, 0 0 30px rgb(86, 145, 124); */
+    text-shadow: 2px 4px rgb(0, 0, 0);
+}
+
+.nav-bar-name:hover{
+    /* text-shadow: 2px 1px red, 0 0 30px rgb(86, 145, 124); */
+    text-shadow: 1px 3px rgb(0, 0, 0), 0 0 8px rgb(255, 255, 255);
+}
+
+.nav-bar-link {
+  /* text-shadow: 2px 1px red, 0 0 30px rgb(86, 145, 124); */
+  text-shadow: -2px 4px rgb(0, 0, 0);
+}
+
+.nav-bar-link:hover {
+    /* text-shadow: 2px 1px red, 0 0 30px rgb(86, 145, 124); */
+    text-shadow: -1px 3px rgb(0, 0, 0), 0 0 8px rgb(255, 255, 255);
+}

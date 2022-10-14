@@ -1,0 +1,62 @@
+/* Footer content spacing: set to match navbar positioning */
+.footer-container {
+    width: 100%;
+}
+
+/* Footer links default color - white*/
+.foot-link {
+    color: inherit;
+}
+
+.foot-icon-left{
+    /* text-shadow: 2px 1px red, 0 0 30px rgb(86, 145, 124); */
+    text-shadow: 3px 3px rgb(0, 0, 0);
+}
+
+.foot-icon-left:hover{
+    /* text-shadow: 2px 1px red, 0 0 30px rgb(86, 145, 124); */
+    text-shadow: 1px 2px rgb(0, 0, 0), 0 0 15px rgb(255, 255, 255);
+}
+
+.foot-icon-right{
+    /* text-shadow: 2px 1px red, 0 0 30px rgb(86, 145, 124); */
+    text-shadow: -3px 3px rgb(0, 0, 0);
+}
+
+.foot-icon-right:hover{
+    /* text-shadow: 2px 1px red, 0 0 30px rgb(86, 145, 124); */
+    text-shadow: -1px 2px rgb(0, 0, 0), 0 0 15px rgb(255, 255, 255);
+}
+  
+/* Footer links color on hover - pale yellow */
+.foot-link:hover {
+    color: #F1FA8C;
+}
+  
+/* Sticky footer properties */
+.footer {
+    /* footer gradient */
+    /* background-image: linear-gradient(rgba(255, 255, 255, 0), rgb(41, 41, 41), rgba(255, 255, 255, 0)); */
+
+    /* background-color: brown; */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+    /* Set the fixed height of the footer here */
+    height: 56px;
+
+    /* Vertically center the text there */
+    line-height: 55px; 
+
+    /* Text color not active since it is muted */
+    color: black;
+    text-align: center;
+    font-size: 12px;
+}
+
+/* Contact popover arrow offset */
+.arrow::after {
+    left: -4px;
+}

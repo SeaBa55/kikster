@@ -1,8 +1,8 @@
 {
-  "name": "kickster",
+  "name": "kikster",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://seaba55.github.io/kickster",
+  "homepage": "https://seaba55.github.io/kikster",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",

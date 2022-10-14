@@ -1,16 +1,15 @@
 {
-  "main.css": "/kickster/static/css/main.59d29865.chunk.css",
-  "main.js": "/kickster/static/js/main.c0fd6114.chunk.js",
-  "main.js.map": "/kickster/static/js/main.c0fd6114.chunk.js.map",
-  "runtime~main.js": "/kickster/static/js/runtime~main.1e0e8f7f.js",
-  "runtime~main.js.map": "/kickster/static/js/runtime~main.1e0e8f7f.js.map",
-  "static/js/2.926424c2.chunk.js": "/kickster/static/js/2.926424c2.chunk.js",
-  "static/js/2.926424c2.chunk.js.map": "/kickster/static/js/2.926424c2.chunk.js.map",
-  "static/js/3.7fa365a8.chunk.js": "/kickster/static/js/3.7fa365a8.chunk.js",
-  "static/js/3.7fa365a8.chunk.js.map": "/kickster/static/js/3.7fa365a8.chunk.js.map",
-  "index.html": "/kickster/index.html",
-  "precache-manifest.868e895dd6f85c2124b4496348f6fd84.js": "/kickster/precache-manifest.868e895dd6f85c2124b4496348f6fd84.js",
-  "service-worker.js": "/kickster/service-worker.js",
-  "static/css/main.59d29865.chunk.css.map": "/kickster/static/css/main.59d29865.chunk.css.map",
-  "static/media/logo.svg": "/kickster/static/media/logo.06e73328.svg"
+  "files": {
+    "main.css": "/kikster/static/css/main.545fbc37.css",
+    "main.js": "/kikster/static/js/main.dd9ba804.js",
+    "static/js/787.73b8bd42.chunk.js": "/kikster/static/js/787.73b8bd42.chunk.js",
+    "index.html": "/kikster/index.html",
+    "main.545fbc37.css.map": "/kikster/static/css/main.545fbc37.css.map",
+    "main.dd9ba804.js.map": "/kikster/static/js/main.dd9ba804.js.map",
+    "787.73b8bd42.chunk.js.map": "/kikster/static/js/787.73b8bd42.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.545fbc37.css",
+    "static/js/main.dd9ba804.js"
+  ]
 }

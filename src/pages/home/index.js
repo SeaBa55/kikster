@@ -28,7 +28,7 @@ const Home = () => {
     ];
 
     const containerStyles = {
-        width: '500px',
+        width: '380px',
         height: '280px',
         margin: '0 auto'
     };

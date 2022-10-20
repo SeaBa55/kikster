@@ -4,6 +4,7 @@ import {
     Nav, 
     Navbar
 } from 'react-bootstrap';
+import { kiksterLogo } from "./";
 import './style.css';
 
 const NavBar = () => {
@@ -20,6 +21,10 @@ const NavBar = () => {
         };
     };
 
+    const iconImageStyle = {
+        marginLeft: '20%'
+    }
+
     return (
         <Navbar onToggle={toggle} expanded={navExpanded} expand="lg" bg="light" variant="light" sticky="top">
             <Navbar.Brand>
@@ -28,7 +33,14 @@ const NavBar = () => {
                     style= {{color: "inherit"}}
                     className= "text-decoration-none"
                 >
-                    Kikster Logo
+                    <img
+                        src="/Kikster_Oficial_Recuadros_K.png"
+                        style= {iconImageStyle}
+                        width="40"
+                        height="40"
+                        className="d-inline-block align-top"
+                        alt="Kikster logo"
+                    />
                 </NavLink>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav"/>

@@ -1,30 +1,32 @@
+const baseURL = process.env.PUBLIC_URL;
+
 const images = [
     {
         title: "pexels-1",
-        url: `${process.env.PUBLIC_URL}/images/pexels-diego-gonzalez.jpg`
+        url: `${baseURL}/images/pexels-diego-gonzalez.jpg`
     },
     {
         title: "pexels-2",
-        url: `${process.env.PUBLIC_URL}/images/pexels-juan-rojas.jpg`
+        url: `${baseURL}/images/pexels-juan-rojas.jpg`
     },
     {
         title: "pexels-3",
-        url: `${process.env.PUBLIC_URL}/images/pexels-leticia-azevedo.jpg`
+        url: `${baseURL}/images/pexels-leticia-azevedo.jpg`
     },
     {
         title: "pexels-4",
-        url: `${process.env.PUBLIC_URL}/images/pexels-santiago-boada.jpg`
+        url: `${baseURL}/images/pexels-santiago-boada.jpg`
     },
     {
         title: "pexels-5",
-        url: `${process.env.PUBLIC_URL}/images/pexels-valentina-diaz.jpg`
+        url: `${baseURL}/images/pexels-valentina-diaz.jpg`
     },
 ];
 
 const jumbotron = [
     { 
         title: "jumbotronDefault",
-        url: `${process.env.PUBLIC_URL}/images/IMG_8208-min.JPG`
+        url: `${baseURL}/images/IMG_8208-min.JPG`
     }
 ];
 

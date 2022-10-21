@@ -6,6 +6,8 @@ import {
 } from 'react-bootstrap';
 import './style.css';
 
+const baseURL = process.env.PUBLIC_URL;
+
 const NavBar = () => {
     const [navExpanded, setNavExpanded] = useState(false);
 
@@ -33,7 +35,7 @@ const NavBar = () => {
                     className= "text-decoration-none"
                 >
                     <img
-                        src={`${process.env.PUBLIC_URL}/Kikster_Oficial_Recuadros_K.png`}
+                        src={`${baseURL}/Kikster_Oficial_Recuadros_K.png`}
                         style= {iconImageStyle}
                         width="40"
                         height="40"

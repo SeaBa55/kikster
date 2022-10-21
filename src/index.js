@@ -17,7 +17,6 @@ import './index.css';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const baseURL = process.env.PUBLIC_URL;
-console.log(baseURL);
 const router = createBrowserRouter(
   [
     {

@@ -36,7 +36,6 @@ const ImageSlider = ({slides}) => {
             position:'relative',
             height: scope ? '100%' : '80%',
             width: scope ? '50%' : '20%',
-            // margin: '1%',
             borderRadius: '1px',
             boxShadow: scope ? '0px 15px 10px -5px #888888' : '0px 5px 10px 0px #888888',
             backgroundPosition: 'center',

@@ -1,4 +1,4 @@
-export default [
+export const images = [
     {
         title: "pexels-1",
         url: `${process.env.PUBLIC_URL}/images/pexels-diego-gonzalez.jpg`
@@ -20,6 +20,16 @@ export default [
         url: `${process.env.PUBLIC_URL}/images/pexels-valentina-diaz.jpg`
     },
 ];
+
+export const jumbotron = [
+    { 
+        title: "jumbotronDefault",
+        url: `${process.env.PUBLIC_URL}/images/IMG_8208-min.JPG`
+    }
+]
+
+
+
 
 // export default [
 //     {

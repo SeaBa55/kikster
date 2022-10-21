@@ -1,13 +1,20 @@
 import React from "react";
 import ImageSlider from "../../components/image-slider"
-import slides from "../../images";
+import {images, jumbotron}  from "../../images";
 import './style.css';
 
 const Home = () => {
     return (
         <div>
-            <h1 className="style-1">Home</h1>
-            <ImageSlider slides={slides}/>
+            <div className="jumbotron">
+                <img
+                src={jumbotron[0].url}
+              className="img-fluid shadow-gradient"
+              alt="test"
+                />
+                {console.log(jumbotron.url)}
+            </div>
+            <ImageSlider slides={images}/>
         </div>
     );
 }

@@ -1,0 +1,9 @@
+.shadow-gradient:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0,0,0,0), black);
+  }

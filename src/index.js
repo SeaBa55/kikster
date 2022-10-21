@@ -1,20 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import App from "./App";
 import ErrorPage from "./pages/error";
-import Home from './pages/home';
-import About from './pages/about';
-import Portfolio from './pages/portfolio';
-import Contact from './pages/contact';
-import reportWebVitals from './reportWebVitals';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './index.css';
+import Home from "./pages/home";
+import About from "./pages/about";
+import Portfolio from "./pages/portfolio";
+import Contact from "./pages/contact";
+import reportWebVitals from "./reportWebVitals";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./index.css";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
 const baseURL = process.env.PUBLIC_URL;
 const router = createBrowserRouter(
@@ -43,7 +40,7 @@ const router = createBrowserRouter(
       ],
     },
   ],
-  {basename: baseURL},
+  { basename: baseURL }
 );
 
 root.render(

@@ -1,32 +1,30 @@
-.shadow-gradient:after {
-  content: '';
+/* .shadow-gradient:after {
+  content: "";
+  display: flex;
   position: absolute;
-  bottom: 0%;
   left: 0;
   right: 0;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, black);
+  margin-top: -10%;
+  margin-bottom: 50%;
   height: 20%;
-  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0), black);
-}
+  width: 100%;
+} */
+
 
 .shadow-gradient-2::before {
-  content: '';
+  content: "";
+  display: flex;
   position: absolute;
-  bottom: 0%;
+  margin-bottom: 25%;
   left: 0;
   right: 0;
-  height: 100%;
-  background-image: 
-    linear-gradient(to bottom, 
-      black 0%,
-      rgb(0, 0, 0) 60%,
-      rgba(255, 255, 255, 0) 100%
-    );
-}
+  height: 25%;
+  background-image: linear-gradient(
+    to bottom,
+    black 0%,
+    rgb(0, 0, 0) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
 
-.card-img-top, .card{
-  border: none !important;
-  border-radius: 0px !important;
-  border-color: none !important;
-  border-radius: none !important;
-  border-width: 0px !important;
 }

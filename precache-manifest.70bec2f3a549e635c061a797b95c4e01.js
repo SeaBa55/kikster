@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/kikster/static/js/runtime~main.f14f189d.js"
   },
   {
-    "revision": "3e7116f3cfaab9477be1283b9c555c50",
+    "revision": "6bf6061bc57810c085fbe587af2d69f0",
     "url": "/kikster/index.html"
   }
 ];

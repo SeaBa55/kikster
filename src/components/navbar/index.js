@@ -4,7 +4,6 @@ import {
     Nav, 
     Navbar
 } from 'react-bootstrap';
-import { kiksterLogo } from "./";
 import './style.css';
 
 const NavBar = () => {
@@ -34,7 +33,7 @@ const NavBar = () => {
                     className= "text-decoration-none"
                 >
                     <img
-                        src="/Kikster_Oficial_Recuadros_K.png"
+                        src={`${process.env.PUBLIC_URL}/Kikster_Oficial_Recuadros_K.png`}
                         style= {iconImageStyle}
                         width="40"
                         height="40"

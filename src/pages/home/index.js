@@ -1,13 +1,27 @@
 import React from "react";
+import ThemeProvider from 'react-bootstrap/ThemeProvider';
 import ImageSlider from "../../components/image-slider"
-import slides from "../../images";
+import Card from 'react-bootstrap/Card';
+import {
+    images, 
+    jumbotron
+}  from "../../images";
 import './style.css';
 
 const Home = () => {
     return (
         <div>
-            <h1 className="style-1">Home</h1>
-            <ImageSlider slides={slides}/>
+            <Card className="shadow-gradient">
+                <Card.Img
+                    src={jumbotron[0].url}
+                    variant="top"
+                    className="img-fluid"
+                    alt="test"
+                />
+            </Card>
+            <Card className="shadow-gradient-2">
+                <ImageSlider slides={images}/>
+            </Card>
         </div>
     );
 }

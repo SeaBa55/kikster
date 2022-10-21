@@ -1,0 +1,32 @@
+.shadow-gradient:after {
+  content: '';
+  position: absolute;
+  bottom: 0%;
+  left: 0;
+  right: 0;
+  height: 20%;
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0), black);
+}
+
+.shadow-gradient-2::before {
+  content: '';
+  position: absolute;
+  bottom: 0%;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background-image: 
+    linear-gradient(to bottom, 
+      black 0%,
+      rgb(0, 0, 0) 60%,
+      rgba(255, 255, 255, 0) 100%
+    );
+}
+
+.card-img-top, .card{
+  border: none !important;
+  border-radius: 0px !important;
+  border-color: none !important;
+  border-radius: none !important;
+  border-width: 0px !important;
+}

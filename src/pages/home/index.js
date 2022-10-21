@@ -1,5 +1,4 @@
 import React from "react";
-import ThemeProvider from "react-bootstrap/ThemeProvider";
 import ImageSlider from "../../components/image-slider";
 import { images, jumbotron } from "../../images";
 import "./style.css";

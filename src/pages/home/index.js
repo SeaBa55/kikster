@@ -1,5 +1,4 @@
 import React from "react";
-import ThemeProvider from 'react-bootstrap/ThemeProvider';
 import ImageSlider from "../../components/image-slider"
 import Card from 'react-bootstrap/Card';
 import {

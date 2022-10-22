@@ -23,6 +23,10 @@
     );
 }
 
+.ofHidden {
+  overflow: hidden;
+}
+
 .card-img-top, .card{
   border: none !important;
   border-radius: 0px !important;

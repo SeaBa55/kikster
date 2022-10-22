@@ -19,7 +19,9 @@ const Home = () => {
                 />
             </Card>
             <Card className="shadow-gradient-2">
-                <ImageSlider slides={images}/>
+                <div className="ofHidden">
+                    <ImageSlider slides={images}/>
+                </div>
             </Card>
         </div>
     );

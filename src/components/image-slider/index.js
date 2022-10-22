@@ -28,11 +28,10 @@ const ImageSlider = ({slides}) => {
     };
 
     const containerStyles = {
-        overflow: 'hidden',
         width: '380px',
         height: '280px',
         margin: '0 auto',
-        paddingBottom: '5%'
+        paddingBottom: '4%'
     };
 
     const sliderStyles = {

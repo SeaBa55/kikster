@@ -1,7 +1,7 @@
 {
-  "main.css": "/kikster/static/css/main.a0c577e7.chunk.css",
-  "main.js": "/kikster/static/js/main.901b2a1f.chunk.js",
-  "main.js.map": "/kikster/static/js/main.901b2a1f.chunk.js.map",
+  "main.css": "/kikster/static/css/main.cfcd71c4.chunk.css",
+  "main.js": "/kikster/static/js/main.165473d9.chunk.js",
+  "main.js.map": "/kikster/static/js/main.165473d9.chunk.js.map",
   "static/js/1.3d769473.chunk.js": "/kikster/static/js/1.3d769473.chunk.js",
   "static/js/1.3d769473.chunk.js.map": "/kikster/static/js/1.3d769473.chunk.js.map",
   "static/css/2.0dabf82b.chunk.css": "/kikster/static/css/2.0dabf82b.chunk.css",
@@ -9,9 +9,9 @@
   "static/js/2.1fa1f3e5.chunk.js.map": "/kikster/static/js/2.1fa1f3e5.chunk.js.map",
   "runtime~main.js": "/kikster/static/js/runtime~main.0a783c49.js",
   "runtime~main.js.map": "/kikster/static/js/runtime~main.0a783c49.js.map",
-  "static/css/main.a0c577e7.chunk.css.map": "/kikster/static/css/main.a0c577e7.chunk.css.map",
+  "static/css/main.cfcd71c4.chunk.css.map": "/kikster/static/css/main.cfcd71c4.chunk.css.map",
   "static/css/2.0dabf82b.chunk.css.map": "/kikster/static/css/2.0dabf82b.chunk.css.map",
   "index.html": "/kikster/index.html",
-  "precache-manifest.34bf84b5d422bc8f48bf04e6f4d55411.js": "/kikster/precache-manifest.34bf84b5d422bc8f48bf04e6f4d55411.js",
+  "precache-manifest.626c4e7d5e2abd9f8a33e6ed89f81ff7.js": "/kikster/precache-manifest.626c4e7d5e2abd9f8a33e6ed89f81ff7.js",
   "service-worker.js": "/kikster/service-worker.js"
 }

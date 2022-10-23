@@ -30,4 +30,31 @@ const jumbotron = [
     }
 ];
 
-export { images, jumbotron };
+const portfolioImages = [
+    {
+        title:"kite-surf",
+        url:`${baseURL}/images/IMG_5691-min.JPG`
+    },
+    {
+        title:"team-photo",
+        url:`${baseURL}/images/f22d7d69-2c5e-41ab-bff9-a35076d2f0bc-min.jpg`
+    },
+    {
+        title:"mujer-sombrero",
+        url:`${baseURL}/images/IMG_5131-min.JPG`
+    },
+    {
+        title:"local-entreprenuers",
+        url:`${baseURL}/images/12A6031E-01BC-450A-AA39-CD11CAC325D3-min.jpg`
+    },
+    {
+        title:"lake",
+        url:`${baseURL}/images/IMG_4494-min.jpg`
+    },
+    {
+        title:"beach-entreprenuers",
+        url:`${baseURL}/images/IMG_5128-min.JPG`
+    }
+]
+
+export { images, jumbotron, portfolioImages };

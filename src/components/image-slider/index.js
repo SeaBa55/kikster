@@ -10,34 +10,7 @@ const ImageSlider = ({slides}) => {
     const [elClicked, setElClicked] = useState(false);
     const [dragStart, setDragStart] = useState(0);
     const [elDragged, setElDragged] = useState(false);
-
-
-    const [isMobile, setIsMobile] = useState(false)
- 
-    //choose the screen size 
-    const handleResize = () => {
-        if (window.innerWidth < 720) {
-            setIsMobile(true)
-        } else {
-            setIsMobile(false)
-        }
-    }
-
-    // create an event listener
-    useEffect(() => {
-    window.addEventListener("resize", handleResize)
-    })
-
-    useEffect(() => {
-        const array = 
-        [
-        currIndex - 1 < 0 ? slides.length - 1 : currIndex - 1,
-        currIndex,
-        currIndex + 1 > slides.length - 1 ? 0 : currIndex + 1
-        ];
-        setRange(array);
-    },[currIndex])
-
+    const [isMobile, setIsMobile] = useState(true);
     const mode = 'outer';
     const dist = 100;
     const effectType = {
@@ -47,21 +20,51 @@ const ImageSlider = ({slides}) => {
         trail: [-1,-1]
     };
 
+    useEffect(() => {
+        window.addEventListener('load', handleResize);
+        window.addEventListener("resize", handleResize);
+    })
+
+    useEffect(() => {
+        const array =  [];
+
+        const second =  calcNext(currIndex,'prev');
+        const first = calcNext(second, 'prev');
+        const fourth = calcNext(currIndex, 'next');
+        const fifth = calcNext(fourth, 'next');
+
+        !isMobile && array.push(first);
+        array.push(second);
+        array.push(currIndex);
+        array.push(fourth);
+        !isMobile && array.push(fifth);
+
+        setRange(array);
+    },[currIndex, isMobile]);
+
+    const calcNext = (current, action) => {
+        if (action === 'prev') {
+            return current - 1 < 0 ? slides.length - 1 : current - 1;
+        } else {
+            return current + 1 > slides.length - 1 ? 0 : current + 1;
+        }
+    };
+
+    const handleResize = () => {
+        if (window.innerWidth < 720) {
+            setIsMobile(true)
+        } else {
+            setIsMobile(false)
+        }
+    };
+
     const containerStyles = {
-        // width: '380px',
-        // height: '280px',
-        // width: '26%',
-        width: '460px',
-        // height: '50%',
+        maxWidth: '80%',
         margin: '0 auto',
-        // paddingTop: '10%',
         paddingBottom: '3.5%'
-        // marginTop: '5%',
-        // marginBottom: '5%'
     };
 
     const sliderStyles = {
-        height: '50%',
         position: 'relative',
         display: 'flex',
         justifyContent: 'center',
@@ -74,7 +77,7 @@ const ImageSlider = ({slides}) => {
         transform: 'translate(0, -50%)',
         left: '0%',
         fontSize: '40px',
-        zIndex: 3,
+        zIndex: 4,
         cursor: 'pointer',
         color: 'white'
     };
@@ -85,67 +88,100 @@ const ImageSlider = ({slides}) => {
         transform: 'translate(0, -50%)',
         right: '0%',
         fontSize: '40px',
-        zIndex: 3,
+        zIndex: 4,
         cursor: 'pointer',
         color: 'white'
     };
 
-    const imageSliderDivStyles = (scope, side) => {
-        return {
-            position: scope ? 'relative' : 'absolute',
-            [side]: scope ? '0' : '10%',
-            // height: scope ? '100%' : '80%',
-            width: scope ? '50%' : '40%',
-            border: scope && elClicked && !elDragged ? '2px solid white' : 'none',
-            boxShadow: scope ? '0px 10px 10px -5px #888888' : '0px 5px 10px 0px #888888',
+
+    const imageSliderDivLayout = [
+        {
+            position: 'relative',
+            left: '10%',
+            width: '40%',
+            border: 'none',
+            boxShadow: '0px 5px 10px 0px #888888',
             backgroundPosition: 'center',
             backgroundSize: 'cover',
-            opacity: scope ? '1' : '0.2',
-        };
-    };
+            opacity: '0.2',
+            zIndex: `${2+direction}`
+        },
+        {
+            position: 'relative',
+            left: isMobile ? '10%' : '5%',
+            width: isMobile ? '70%' : '50%',
+            border: 'none',
+            boxShadow: '0px 5px 10px 0px #888888',
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            opacity: '0.2',
+            zIndex: `${3+direction}`
+        },
+        {
+            position: 'relative',
+            width: isMobile ? '100%' : '70%',
+            border: elClicked && !elDragged ? '2px solid white' : 'none',
+            boxShadow: '0px 10px 10px -5px #888888',
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            opacity: '1',
+            zIndex: `${4+Math.abs(direction)}`
+        },
+        {
+            position: 'relative',
+            right: isMobile ? '10%' : '5%',
+            width: isMobile ? '70%' : '50%',
+            border: 'none',
+            boxShadow: '0px 5px 10px 0px #888888',
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            opacity: '0.2',
+            zIndex: `${3-direction}`
+        },
+        {
+            position: 'relative',
+            right: '10%',
+            width: '40%',
+            border: 'none',
+            boxShadow: '0px 5px 10px 0px #888888',
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            opacity: '0.2',
+            zIndex: `${2-direction}`
+        }
+    ];
+
+    const imageSliderDivStyles = (index) => imageSliderDivLayout[index];
 
     const imageSliderImgStyles = {
-        // position:'absolute',
-        // height: '100%',
         width: '100%',
         pointerEvents: 'none'
     };
 
-    const imageSliderSubDivStyles = (scope, side) => {
+    const imageSliderSubDivStyles = (scope) => {
         return {
             position: 'absolute',
             height: '100%',
             width: '100%',
             top: '50%',
             transform: 'translate(0, -50%)',
-            // right: '0%',
             fontSize: '40px',
-            // zIndex: 3,
             cursor: 'pointer',
-            // color: 'white',
-            // display: 'flex',
-            // justifyContent: 'center',
-            // alignItems: 'center',
             // backgroundImage: 'linear-gradient(180deg, rgba(255, 255, 255, 0), black)',
             backgroundColor: 'black',
-            opacity: scope ? '0.0' : '0.5',
-            // pointerEvents: 'none'
+            opacity: scope ? '0.0' : '0.4',
         }
     };
 
     const prev = () => {
-        const isFirst = currIndex === 0;
-        const newIndex = isFirst ? slides.length - 1 : currIndex - 1;
-        setCurrIndex(newIndex);
+        setCurrIndex(calcNext(currIndex, 'prev'));
         setDirection(-1);
         setElClicked(false);
         setElDragged(false);
     };
 
     const next = () => {
-        const isLast = currIndex === slides.length - 1;
-        const newIndex = isLast ? 0 : currIndex + 1;
-        setCurrIndex(newIndex);
+        setCurrIndex(calcNext(currIndex, 'next'));
         setDirection(1);
         setElClicked(false);
         setElDragged(false);
@@ -197,11 +233,10 @@ const ImageSlider = ({slides}) => {
                     </>
                 }
             <AnimatePresence initial="false" mode="popLayout">
-                    {range.map(rangeIndex => {
+                    {range.map((rangeIndex, index) => {
                         const xInit = effectType[mode][0]*dist*direction;
                         const xExit = effectType[mode][1]*dist*direction;
                         const scope = rangeIndex === currIndex;
-                        const side = detectSide(rangeIndex);
                         return (
                             <motion.div
                                 layout
@@ -209,19 +244,16 @@ const ImageSlider = ({slides}) => {
                                 onClick ={(event) => !isMobile && frameClick(event, rangeIndex, detectSide(rangeIndex))}
                                 onDragStart={(event) => isMobile && frameDragStart(event)}
                                 onDragEnd={event => isMobile && frameDragEnd(event, rangeIndex, detectSide(rangeIndex))}
-                                style={imageSliderDivStyles(scope, side)}
+                                style={imageSliderDivStyles(isMobile ? index + 1 : index)}
                                 initial={{ 
                                     x: xInit, 
                                     scale: 0.8, 
                                     opacity: 0.0,
                                 }}
                                 animate={{
-                                    // rotate: -360,
                                     x: 0, 
                                     scale: 1, 
-                                    // opacity: scope ? 1.0 : 0.5,
                                     opacity: 1.0,
-                                    zIndex: scope ? 3 : 2
                                 }}
                                 exit={{ 
                                     x: xExit, 
@@ -229,14 +261,16 @@ const ImageSlider = ({slides}) => {
                                     opacity: 0.0
                                 }}
                                 transition={{
-                                    opacity: { ease: "linear" },
-                                    layout: { duration: .6 }, 
-                                    // zIndex: { ease: "linear",
-                                    // duration: 0.6 }
+                                    opacity: { 
+                                        ease: "linear",
+                                        duration: 0.3
+                                    },
+                                    layout: { 
+                                        duration: .6,
+                                        type: 'spring',
+                                        damping: 25,
+                                    }
                                 }}
-                                // transition={{ type: 'spring', damping: 15 }}
-                                // transition={{ type: "spring" }}
-                                // transition={{ duration: 1 }}
                                 drag = {isMobile ? 'x' : 'none'}
                                 dragConstraints={{ left: 0, right: 0 }}
                             >
@@ -244,7 +278,7 @@ const ImageSlider = ({slides}) => {
                                     style={imageSliderImgStyles} 
                                     src = {slides[rangeIndex].url}
                                 />
-                                <motion.div style={imageSliderSubDivStyles(scope, side)}>
+                                <motion.div style={imageSliderSubDivStyles(scope)}>
                                 </motion.div>
                             </motion.div>
                         )

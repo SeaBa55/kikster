@@ -57,4 +57,15 @@ const portfolioImages = [
     }
 ]
 
-export { images, jumbotron, portfolioImages };
+const projectImages = [
+    {
+        title: "hiking-mountain",
+        url:`${baseURL}/images/IMG_0477-min.JPG`
+    },
+    {
+        title: "smoky-mountain",
+        url:`${baseURL}/images/IMG_2519_MOV_AdobeExpress.gif`
+    }
+]
+
+export { images, jumbotron, portfolioImages, projectImages };

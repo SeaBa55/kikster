@@ -16,7 +16,7 @@ const Home = () => {
         />
       </div>
 
-      <div class="shadow-gradient-2 container-fluid">
+      <div className="shadow-gradient-2 container-fluid">
         <div className="mt-3">
           <ImageSlider slides={images} />
         </div>

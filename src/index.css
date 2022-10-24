@@ -16,3 +16,10 @@ code {
   font-family: "Lobster", cursive;
   color: #cc624c;
 }
+
+@media only screen and (max-width: 767px) {
+  .text-sm-white{
+    color: white;
+  }
+}
+

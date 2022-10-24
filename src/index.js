@@ -10,6 +10,7 @@ import Contact from "./pages/contact";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
+import Project from "./pages/project";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -30,13 +31,22 @@ const router = createBrowserRouter(
           element: <About />,
         },
         {
-          path: "portfolio",
-          element: <Portfolio />,
+          path: "portfolio/",
+          children: [
+            {
+              index: true,
+              element: <Portfolio />,
+            },
+            {
+              path: "project",
+              element: <Project />,
+            },
+          ],
         },
         {
           path: "contact",
           element: <Contact />,
-        },
+        }
       ],
     },
   ],

@@ -8,6 +8,25 @@ const ImageSlider = ({slides}) => {
     const [direction, setDirection] = useState(0);
     const [range, setRange] = useState([]);
     const [elClicked, setElClicked] = useState(false);
+    const [dragStart, setDragStart] = useState(0);
+    const [elDragged, setElDragged] = useState(false);
+
+
+    const [isMobile, setIsMobile] = useState(false)
+ 
+    //choose the screen size 
+    const handleResize = () => {
+        if (window.innerWidth < 720) {
+            setIsMobile(true)
+        } else {
+            setIsMobile(false)
+        }
+    }
+
+    // create an event listener
+    useEffect(() => {
+    window.addEventListener("resize", handleResize)
+    })
 
     useEffect(() => {
         const array = 
@@ -77,7 +96,7 @@ const ImageSlider = ({slides}) => {
             [side]: scope ? '0' : '10%',
             // height: scope ? '100%' : '80%',
             width: scope ? '50%' : '40%',
-            border: scope && elClicked ? '2px solid white' : 'none',
+            border: scope && elClicked && !elDragged ? '2px solid white' : 'none',
             boxShadow: scope ? '0px 10px 10px -5px #888888' : '0px 5px 10px 0px #888888',
             backgroundPosition: 'center',
             backgroundSize: 'cover',
@@ -100,7 +119,7 @@ const ImageSlider = ({slides}) => {
             top: '50%',
             transform: 'translate(0, -50%)',
             // right: '0%',
-            // fontSize: '40px',
+            fontSize: '40px',
             // zIndex: 3,
             cursor: 'pointer',
             // color: 'white',
@@ -120,6 +139,7 @@ const ImageSlider = ({slides}) => {
         setCurrIndex(newIndex);
         setDirection(-1);
         setElClicked(false);
+        setElDragged(false);
     };
 
     const next = () => {
@@ -128,28 +148,35 @@ const ImageSlider = ({slides}) => {
         setCurrIndex(newIndex);
         setDirection(1);
         setElClicked(false);
+        setElDragged(false);
     };
 
-    const frameClick = (rangeIndex, side) => {
+    const frameClick = (event, rangeIndex, side) => {
+        // event.stopImmediatePropagation()
         const dir = side === "left" ? -1 : 1
+        console.log(event)
         if (rangeIndex !== currIndex) {
             setCurrIndex(rangeIndex);
             setElClicked(true);
             setDirection(dir);
         }
+    }
+
+    const frameDragStart = (event) => {
+        setDragStart(event.pageX);
+        setElDragged(true);
     };
 
-    const frameDrag = (event, rangeIndex, side) => {
-        console.log(event)
-        // console.log(event.offsetX, event.offsetY)
-        console.log(event.movementX, event.movementY) // direction
-        console.log(event.pageX, event.pageY) // distance
-
-        const dir = side === "left" ? -1 : 1
-        if (rangeIndex !== currIndex) {
-            setCurrIndex(rangeIndex);
-            setElClicked(true);
+    const frameDragEnd = (event, rangeIndex, side) => {
+        const moveDist = event.pageX-dragStart;
+        const next = moveDist > 0 ?  range[0] : range[2];
+        const dragThld = 30;
+        const dragThldCrossed = Math.abs(moveDist) > dragThld ? true : false;
+        const dir = moveDist > 0 ? -1 : 1
+        if (dragThldCrossed) {
+            setCurrIndex(next);
             setDirection(dir);
+            setElDragged(true);
         }
     };
 
@@ -162,20 +189,26 @@ const ImageSlider = ({slides}) => {
     return (
         <div style={containerStyles}>
             <div style={sliderStyles}>
-                <div style={leftArrowStyles} onClick={prev}>❮</div>
-                <div style={rightArrowStyles} onClick={next}>❯</div>
-                <AnimatePresence initial="false" mode="popLayout">
+                {
+                    !isMobile &&
+                    <>
+                        <div style={leftArrowStyles} onClick={prev}>❮</div>
+                        <div style={rightArrowStyles} onClick={next}>❯</div>
+                    </>
+                }
+            <AnimatePresence initial="false" mode="popLayout">
                     {range.map(rangeIndex => {
                         const xInit = effectType[mode][0]*dist*direction;
-                        const  xExit = effectType[mode][1]*dist*direction;
+                        const xExit = effectType[mode][1]*dist*direction;
                         const scope = rangeIndex === currIndex;
                         const side = detectSide(rangeIndex);
                         return (
                             <motion.div
                                 layout
                                 key={rangeIndex}
-                                onClick={() => frameClick(rangeIndex, detectSide(rangeIndex))}
-                                onDrag={event => frameDrag(event, rangeIndex, detectSide(rangeIndex))}
+                                onClick ={(event) => !isMobile && frameClick(event, rangeIndex, detectSide(rangeIndex))}
+                                onDragStart={(event) => isMobile && frameDragStart(event)}
+                                onDragEnd={event => isMobile && frameDragEnd(event, rangeIndex, detectSide(rangeIndex))}
                                 style={imageSliderDivStyles(scope, side)}
                                 initial={{ 
                                     x: xInit, 
@@ -204,16 +237,14 @@ const ImageSlider = ({slides}) => {
                                 // transition={{ type: 'spring', damping: 15 }}
                                 // transition={{ type: "spring" }}
                                 // transition={{ duration: 1 }}
-                                drag="x"
+                                drag = {isMobile ? 'x' : 'none'}
                                 dragConstraints={{ left: 0, right: 0 }}
-                                // dragListener={false}
                             >
                                 <motion.img 
                                     style={imageSliderImgStyles} 
                                     src = {slides[rangeIndex].url}
                                 />
                                 <motion.div style={imageSliderSubDivStyles(scope, side)}>
-                                    hello
                                 </motion.div>
                             </motion.div>
                         )

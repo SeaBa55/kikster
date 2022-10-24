@@ -1,17 +1,17 @@
 {
   "main.css": "/kikster/static/css/main.d576f766.chunk.css",
-  "main.js": "/kikster/static/js/main.8209ec21.chunk.js",
-  "main.js.map": "/kikster/static/js/main.8209ec21.chunk.js.map",
+  "main.js": "/kikster/static/js/main.5f8a8f09.chunk.js",
+  "main.js.map": "/kikster/static/js/main.5f8a8f09.chunk.js.map",
   "static/js/1.3d769473.chunk.js": "/kikster/static/js/1.3d769473.chunk.js",
   "static/js/1.3d769473.chunk.js.map": "/kikster/static/js/1.3d769473.chunk.js.map",
   "static/css/2.0dabf82b.chunk.css": "/kikster/static/css/2.0dabf82b.chunk.css",
-  "static/js/2.52b8cf9b.chunk.js": "/kikster/static/js/2.52b8cf9b.chunk.js",
-  "static/js/2.52b8cf9b.chunk.js.map": "/kikster/static/js/2.52b8cf9b.chunk.js.map",
+  "static/js/2.a3e8b18a.chunk.js": "/kikster/static/js/2.a3e8b18a.chunk.js",
+  "static/js/2.a3e8b18a.chunk.js.map": "/kikster/static/js/2.a3e8b18a.chunk.js.map",
   "runtime~main.js": "/kikster/static/js/runtime~main.0a783c49.js",
   "runtime~main.js.map": "/kikster/static/js/runtime~main.0a783c49.js.map",
   "static/css/main.d576f766.chunk.css.map": "/kikster/static/css/main.d576f766.chunk.css.map",
   "static/css/2.0dabf82b.chunk.css.map": "/kikster/static/css/2.0dabf82b.chunk.css.map",
   "index.html": "/kikster/index.html",
-  "precache-manifest.4e9e24e027e8e92d6dc656d6cf2fb58a.js": "/kikster/precache-manifest.4e9e24e027e8e92d6dc656d6cf2fb58a.js",
+  "precache-manifest.a290f9ff3240e6ad639b73803eef1146.js": "/kikster/precache-manifest.a290f9ff3240e6ad639b73803eef1146.js",
   "service-worker.js": "/kikster/service-worker.js"
 }

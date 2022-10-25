@@ -23,6 +23,10 @@
     );
 }
 
+.test {
+  height: 100%
+}
+
 .ofHidden {
   overflow: hidden;
 }

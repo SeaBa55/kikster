@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
 import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
 import './style.css';
 
@@ -75,8 +76,8 @@ const ImageSlider = ({slides}) => {
         position: 'absolute',
         top: '50%',
         transform: 'translate(0, -50%)',
-        left: '0%',
-        fontSize: '40px',
+        left: '3%',
+        fontSize: '45px',
         zIndex: 4,
         cursor: 'pointer',
         color: 'white'
@@ -86,8 +87,8 @@ const ImageSlider = ({slides}) => {
         position: 'absolute',
         top: '50%',
         transform: 'translate(0, -50%)',
-        right: '0%',
-        fontSize: '40px',
+        right: '3%',
+        fontSize: '45px',
         zIndex: 4,
         cursor: 'pointer',
         color: 'white'
@@ -169,7 +170,25 @@ const ImageSlider = ({slides}) => {
             cursor: 'pointer',
             // backgroundImage: 'linear-gradient(180deg, rgba(255, 255, 255, 0), black)',
             backgroundColor: 'black',
-            opacity: scope ? '0.0' : '0.4',
+            opacity: scope ? '0.0' : '0.5',
+        }
+    };
+
+    const imageSliderButtonDivStyles = {
+        position: 'absolute',
+        height: '100%',
+        width: '100%',
+        top: '50%',
+        transform: 'translate(0, -50%)',
+        cursor: 'pointer',
+    }
+
+    const imageSliderButtonStyles = (scope) => {
+        return {
+            position: 'relative',
+            fontSize: 'clamp(10px, 2.5vw, 16px)',
+            cursor: 'pointer',
+            marginBottom: '10%',
         }
     };
 
@@ -190,7 +209,6 @@ const ImageSlider = ({slides}) => {
     const frameClick = (event, rangeIndex, side) => {
         // event.stopImmediatePropagation()
         const dir = side === "left" ? -1 : 1
-        console.log(event)
         if (rangeIndex !== currIndex) {
             setCurrIndex(rangeIndex);
             setElClicked(true);
@@ -232,7 +250,7 @@ const ImageSlider = ({slides}) => {
                         <div style={rightArrowStyles} onClick={next}>❯</div>
                     </>
                 }
-            <AnimatePresence initial="false" mode="popLayout">
+                <AnimatePresence initial="true" mode="popLayout">
                     {range.map((rangeIndex, index) => {
                         const xInit = effectType[mode][0]*dist*direction;
                         const xExit = effectType[mode][1]*dist*direction;
@@ -278,8 +296,79 @@ const ImageSlider = ({slides}) => {
                                     style={imageSliderImgStyles} 
                                     src = {slides[rangeIndex].url}
                                 />
-                                <motion.div style={imageSliderSubDivStyles(scope)}>
-                                </motion.div>
+                                <motion.div style={imageSliderSubDivStyles(scope)}/>
+                                {
+                                    scope &&
+                                    <motion.div 
+                                        className="container d-flex justify-content-center" 
+                                        style={imageSliderButtonDivStyles}
+                                    >
+                                        <div className="row align-items-end">
+                                            <motion.div 
+                                                className="col-sm"
+                                                initial={{ 
+                                                    y: 100,
+                                                    scale: 0.8, 
+                                                    opacity: 0.0,
+                                                }}
+                                                animate={{ 
+                                                    y: 0,
+                                                    scale: 1,
+                                                    opacity: 1 
+                                                }}
+                                                transition={{
+                                                    delay: 0.7,
+                                                    type: 'spring',
+                                                    // bounce: .5,
+                                                    opacity: { 
+                                                        ease: "linear",
+                                                        duration: 0.6
+                                                    }
+                                                }}
+                                            >   
+                                                <Link to="portfolio">
+                                                    <motion.button 
+                                                        layout
+                                                        type="button" 
+                                                        className="btn btn-light py-0 px-1"
+                                                        style={imageSliderButtonStyles(scope)}
+                                                        key={rangeIndex}
+                                                        whileHover={{ 
+                                                            scale: 1.2, 
+                                                            type: 'spring',
+                                                            backgroundColor: 'gold',
+                                                            borderRadius: '8px'
+                                                        }}
+                                                        whileTap={{ 
+                                                            scale: 0.9, 
+                                                            type: 'spring',
+                                                            backgroundColor: 'rgba(255, 255, 255, 0.6)',
+                                                            borderRadius: '8px'
+                                                        }}
+                                                        animate={{
+                                                            borderRadius: '1px',
+                                                            backgroundColor: 'rgba(255, 255, 255, 0.6)'
+                                                        }}
+                                                        exit={{borderRadius: '6px'}}
+                                                        transition={{
+                                                            borderRadius: {
+                                                                ease: "linear",
+                                                                duration: 0.1,
+                                                                delay: 0.1
+                                                            },
+                                                            backgroundColor: {
+                                                                ease: "linear",
+                                                                delay: 0.1,
+                                                            }
+                                                        }}
+                                                    >
+                                                        ➦ Ver Mas
+                                                    </motion.button>
+                                                </Link>
+                                            </motion.div>
+                                        </div>
+                                    </motion.div>
+                                }
                             </motion.div>
                         )
                     })}

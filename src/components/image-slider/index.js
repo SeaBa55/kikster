@@ -326,7 +326,7 @@ const ImageSlider = ({slides}) => {
                                                     }
                                                 }}
                                             >   
-                                                <Link to="portfolio">
+                                                <Link to="/portfolio/project">
                                                     <motion.button 
                                                         layout
                                                         type="button" 

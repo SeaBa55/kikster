@@ -23,15 +23,11 @@
     );
 }
 
-.test {
-  height: 100%
-}
-
 .ofHidden {
   overflow: hidden;
 }
 
-.card-img-top, .card{
+.card-img-top, .card-alt {
   border: none !important;
   border-radius: 0px !important;
   border-color: none !important;

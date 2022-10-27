@@ -21,6 +21,18 @@ const images = [
         title: "pexels-5",
         url: `${baseURL}/images/pexels-valentina-diaz.jpg`
     },
+    {
+        title: "pexels-6",
+        url: `${baseURL}/images/pexels-ákos-helgert.jpg`
+    },
+    {
+        title: "pexels-7",
+        url: `${baseURL}/images/pexels-nick-wehrli.jpg`
+    },
+    {
+        title: "pexels-8",
+        url: `${baseURL}/images/pexels-osmany-mederos.jpg`
+    },
 ];
 
 const jumbotron = [

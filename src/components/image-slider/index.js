@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link, useOutletContext } from 'react-router-dom';
 import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
 import './style.css';
 
 const ImageSlider = ({slides}) => {
-
+    const [isMobile, setIsMobile] = useOutletContext();
     const [currIndex, setCurrIndex] = useState(0);
     const [direction, setDirection] = useState(0);
     const [range, setRange] = useState([]);
     const [elClicked, setElClicked] = useState(false);
     const [dragStart, setDragStart] = useState(0);
     const [elDragged, setElDragged] = useState(false);
-    const [isMobile, setIsMobile] = useState(true);
+    const [iterations, setIterations] = useState(0);
+
     const mode = 'outer';
     const dist = 100;
     const effectType = {
@@ -20,42 +21,40 @@ const ImageSlider = ({slides}) => {
         outer: [1, -1],
         trail: [-1,-1]
     };
-
-    useEffect(() => {
-        window.addEventListener('load', handleResize);
-        window.addEventListener("resize", handleResize);
-    })
-
+    
     useEffect(() => {
         const array =  [];
-
+        
         const second =  calcNext(currIndex,'prev');
         const first = calcNext(second, 'prev');
         const fourth = calcNext(currIndex, 'next');
         const fifth = calcNext(fourth, 'next');
-
+        
         !isMobile && array.push(first);
         array.push(second);
         array.push(currIndex);
         array.push(fourth);
         !isMobile && array.push(fifth);
-
+        
         setRange(array);
     },[currIndex, isMobile]);
+    
+    useEffect(() => {
+        (async () => {
+            await delay(200); // 400 seems like a slower stable value here
+            iterations && (direction===1 ? next(undefined, iterations) : prev(undefined, iterations));
+        })()
+    },[iterations]);
+
+    const delay = ms => new Promise(
+        resolve => setTimeout(resolve, ms)
+    );
 
     const calcNext = (current, action) => {
         if (action === 'prev') {
             return current - 1 < 0 ? slides.length - 1 : current - 1;
         } else {
             return current + 1 > slides.length - 1 ? 0 : current + 1;
-        }
-    };
-
-    const handleResize = () => {
-        if (window.innerWidth < 720) {
-            setIsMobile(true)
-        } else {
-            setIsMobile(false)
         }
     };
 
@@ -78,7 +77,7 @@ const ImageSlider = ({slides}) => {
         transform: 'translate(0, -50%)',
         left: '3%',
         fontSize: '45px',
-        zIndex: 4,
+        zIndex: 10,
         cursor: 'pointer',
         color: 'white'
     };
@@ -89,11 +88,10 @@ const ImageSlider = ({slides}) => {
         transform: 'translate(0, -50%)',
         right: '3%',
         fontSize: '45px',
-        zIndex: 4,
+        zIndex: 10,
         cursor: 'pointer',
         color: 'white'
     };
-
 
     const imageSliderDivLayout = [
         {
@@ -105,7 +103,7 @@ const ImageSlider = ({slides}) => {
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             opacity: '0.2',
-            zIndex: `${2+direction}`
+            zIndex: `${5+direction}`
         },
         {
             position: 'relative',
@@ -116,7 +114,7 @@ const ImageSlider = ({slides}) => {
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             opacity: '0.2',
-            zIndex: `${3+direction}`
+            zIndex: `${6+direction}`
         },
         {
             position: 'relative',
@@ -126,7 +124,7 @@ const ImageSlider = ({slides}) => {
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             opacity: '1',
-            zIndex: `${4+Math.abs(direction)}`
+            zIndex: `${7+Math.abs(direction)}`
         },
         {
             position: 'relative',
@@ -137,7 +135,7 @@ const ImageSlider = ({slides}) => {
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             opacity: '0.2',
-            zIndex: `${3-direction}`
+            zIndex: `${6-direction}`
         },
         {
             position: 'relative',
@@ -148,7 +146,7 @@ const ImageSlider = ({slides}) => {
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             opacity: '0.2',
-            zIndex: `${2-direction}`
+            zIndex: `${5-direction}`
         }
     ];
 
@@ -192,27 +190,28 @@ const ImageSlider = ({slides}) => {
         }
     };
 
-    const prev = () => {
+    const prev = (event, iterations=1) => {
         setCurrIndex(calcNext(currIndex, 'prev'));
+        setIterations(iterations-1)
         setDirection(-1);
         setElClicked(false);
         setElDragged(false);
     };
 
-    const next = () => {
+    const next = (event, iterations=1) => {
         setCurrIndex(calcNext(currIndex, 'next'));
+        setIterations(iterations-1)
         setDirection(1);
         setElClicked(false);
         setElDragged(false);
     };
 
-    const frameClick = (event, rangeIndex, side) => {
+    const frameClick = async (index, rangeIndex, side) => {
         // event.stopImmediatePropagation()
-        const dir = side === "left" ? -1 : 1
+        const center = Math.ceil((range.length-1)/2);
+        const iterations = Math.abs(center - index);
         if (rangeIndex !== currIndex) {
-            setCurrIndex(rangeIndex);
-            setElClicked(true);
-            setDirection(dir);
+            side === "left" ? prev(undefined, iterations) : next(undefined, iterations);
         }
     }
 
@@ -250,7 +249,7 @@ const ImageSlider = ({slides}) => {
                         <div style={rightArrowStyles} onClick={next}>❯</div>
                     </>
                 }
-                <AnimatePresence initial="true" mode="popLayout">
+                <AnimatePresence initial="false" mode="popLayout">
                     {range.map((rangeIndex, index) => {
                         const xInit = effectType[mode][0]*dist*direction;
                         const xExit = effectType[mode][1]*dist*direction;
@@ -259,7 +258,7 @@ const ImageSlider = ({slides}) => {
                             <motion.div
                                 layout
                                 key={rangeIndex}
-                                onClick ={(event) => !isMobile && frameClick(event, rangeIndex, detectSide(rangeIndex))}
+                                onClick ={(event) => !isMobile && frameClick(index, rangeIndex, detectSide(rangeIndex))}
                                 onDragStart={(event) => isMobile && frameDragStart(event)}
                                 onDragEnd={event => isMobile && frameDragEnd(event, rangeIndex, detectSide(rangeIndex))}
                                 style={imageSliderDivStyles(isMobile ? index + 1 : index)}
@@ -276,9 +275,15 @@ const ImageSlider = ({slides}) => {
                                 exit={{ 
                                     x: xExit, 
                                     scale: 0.8, 
-                                    opacity: 0.0
+                                    opacity: 0.0,
+                                    // zIndex: imageSliderDivLayout[index] - 2,
+                                    // zIndex: 1,
                                 }}
                                 transition={{
+                                    // zIndex: { 
+                                    //     ease: "linear",
+                                    //     duration: 0.0
+                                    // },
                                     opacity: { 
                                         ease: "linear",
                                         duration: 0.3
@@ -362,7 +367,7 @@ const ImageSlider = ({slides}) => {
                                                             }
                                                         }}
                                                     >
-                                                        ➦ Ver Mas
+                                                        Ver Mas
                                                     </motion.button>
                                                 </Link>
                                             </motion.div>

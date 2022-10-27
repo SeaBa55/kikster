@@ -23,7 +23,7 @@ const images = [
     },
     {
         title: "pexels-6",
-        url: `${baseURL}/images/pexels-ákos-helgert.jpg`
+        url: `${baseURL}/images/pexels-akos-helgert.jpg`
     },
     {
         title: "pexels-7",

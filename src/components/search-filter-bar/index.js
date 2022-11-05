@@ -1,3 +1,4 @@
+import React from "react";
 import { Button, Dropdown, Form, InputGroup } from "react-bootstrap";
 
 const SearchFilterBarComponent = () => {

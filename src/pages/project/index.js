@@ -1,3 +1,4 @@
+import React from "react";
 import { Card } from "react-bootstrap";
 import Banner from "../../components/banner";
 import { projectImages } from "../../images";

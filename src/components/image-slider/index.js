@@ -8,7 +8,7 @@ const ImageSlider = ({slides}) => {
     const [currIndex, setCurrIndex] = useState(0);
     const [direction, setDirection] = useState(0);
     const [range, setRange] = useState([]);
-    const [elClicked, setElClicked] = useState(false);
+    const [elClicked, setElClicked] = useState({state: false, index: 0});
     const [dragStart, setDragStart] = useState(0);
     const [elDragged, setElDragged] = useState(false);
     const [iterations, setIterations] = useState(0);
@@ -41,7 +41,11 @@ const ImageSlider = ({slides}) => {
     
     useEffect(() => {
         (async () => {
-            await delay(200); // 400 seems like a slower stable value here
+            await delay(400); // 400 seems like a slower stable value here
+            iterations && setElClicked({
+                ...elClicked,
+                index: elClicked.index-direction
+            });
             iterations && (direction===1 ? next(undefined, iterations) : prev(undefined, iterations));
         })()
     },[iterations]);
@@ -79,7 +83,8 @@ const ImageSlider = ({slides}) => {
         fontSize: '45px',
         zIndex: 10,
         cursor: 'pointer',
-        color: 'white'
+        color: 'white',
+        userSelect: 'none',
     };
 
     const rightArrowStyles = {
@@ -90,63 +95,70 @@ const ImageSlider = ({slides}) => {
         fontSize: '45px',
         zIndex: 10,
         cursor: 'pointer',
-        color: 'white'
+        color: 'white',
+        userSelect: 'none',
     };
+
+    const borderActive = (index) => elClicked.state && elClicked.index===index && !elDragged ? '2px solid white' : 'none';
 
     const imageSliderDivLayout = [
         {
             position: 'relative',
             left: '10%',
             width: '40%',
-            border: 'none',
+            border: borderActive(0),
             boxShadow: '0px 5px 10px 0px #888888',
             backgroundPosition: 'center',
             backgroundSize: 'cover',
+            userSelect: 'none',
             opacity: '0.2',
-            zIndex: `${5+direction}`
+            zIndex: `${2+direction}`
         },
         {
             position: 'relative',
             left: isMobile ? '10%' : '5%',
             width: isMobile ? '70%' : '50%',
-            border: 'none',
+            border: borderActive(1),
             boxShadow: '0px 5px 10px 0px #888888',
             backgroundPosition: 'center',
             backgroundSize: 'cover',
+            userSelect: 'none',
             opacity: '0.2',
-            zIndex: `${6+direction}`
+            zIndex: `${3+direction}`
         },
         {
             position: 'relative',
             width: isMobile ? '100%' : '70%',
-            border: elClicked && !elDragged ? '2px solid white' : 'none',
+            border: borderActive(2),
             boxShadow: '0px 10px 10px -5px #888888',
             backgroundPosition: 'center',
             backgroundSize: 'cover',
+            userSelect: 'none',
             opacity: '1',
-            zIndex: `${7+Math.abs(direction)}`
+            zIndex: `${4+Math.abs(direction)}`
         },
         {
             position: 'relative',
             right: isMobile ? '10%' : '5%',
             width: isMobile ? '70%' : '50%',
-            border: 'none',
+            border: borderActive(3),
             boxShadow: '0px 5px 10px 0px #888888',
             backgroundPosition: 'center',
             backgroundSize: 'cover',
+            userSelect: 'none',
             opacity: '0.2',
-            zIndex: `${6-direction}`
+            zIndex: `${3-direction}`
         },
         {
             position: 'relative',
             right: '10%',
             width: '40%',
-            border: 'none',
-            boxShadow: '0px 5px 10px 0px #888888',
+            border: borderActive(4),
             backgroundPosition: 'center',
             backgroundSize: 'cover',
+            userSelect: 'none',
             opacity: '0.2',
-            zIndex: `${5-direction}`
+            zIndex: `${2-direction}`
         }
     ];
 
@@ -154,7 +166,7 @@ const ImageSlider = ({slides}) => {
 
     const imageSliderImgStyles = {
         width: '100%',
-        pointerEvents: 'none'
+        pointerEvents: 'none',
     };
 
     const imageSliderSubDivStyles = (scope) => {
@@ -169,6 +181,7 @@ const ImageSlider = ({slides}) => {
             // backgroundImage: 'linear-gradient(180deg, rgba(255, 255, 255, 0), black)',
             backgroundColor: 'black',
             opacity: scope ? '0.0' : '0.5',
+            userSelect: 'none',
         }
     };
 
@@ -194,7 +207,11 @@ const ImageSlider = ({slides}) => {
         setCurrIndex(calcNext(currIndex, 'prev'));
         setIterations(iterations-1)
         setDirection(-1);
-        setElClicked(false);
+        // event && setElClicked(false);
+        event && setElClicked({
+            ...elClicked,
+            state: false
+        });
         setElDragged(false);
     };
 
@@ -202,15 +219,24 @@ const ImageSlider = ({slides}) => {
         setCurrIndex(calcNext(currIndex, 'next'));
         setIterations(iterations-1)
         setDirection(1);
-        setElClicked(false);
+        // event && setElClicked(false);
+        event && setElClicked({
+            ...elClicked,
+            state: false
+        });
         setElDragged(false);
     };
 
     const frameClick = async (index, rangeIndex, side) => {
         // event.stopImmediatePropagation()
-        const center = Math.ceil((range.length-1)/2);
-        const iterations = Math.abs(center - index);
         if (rangeIndex !== currIndex) {
+            const center = Math.ceil((range.length-1)/2);
+            const iterations = Math.abs(center - index);
+            // setElClicked(true); // Need to revise the setElClicked logic
+            setElClicked({
+                state: true,
+                index: index-(side === "left" ? -1 : 1)
+            });
             side === "left" ? prev(undefined, iterations) : next(undefined, iterations);
         }
     }
@@ -276,14 +302,9 @@ const ImageSlider = ({slides}) => {
                                     x: xExit, 
                                     scale: 0.8, 
                                     opacity: 0.0,
-                                    // zIndex: imageSliderDivLayout[index] - 2,
-                                    // zIndex: 1,
+                                    zIndex: 1
                                 }}
                                 transition={{
-                                    // zIndex: { 
-                                    //     ease: "linear",
-                                    //     duration: 0.0
-                                    // },
                                     opacity: { 
                                         ease: "linear",
                                         duration: 0.3
@@ -294,7 +315,11 @@ const ImageSlider = ({slides}) => {
                                         damping: 25,
                                     }
                                 }}
-                                drag = {isMobile ? 'x' : 'none'}
+                                dragListener={isMobile}
+                                // drag = {isMobile ? 'x' : 'none'}
+                                dragElastic={0.2}
+                                dragMomentum={false}
+                                drag = 'x'
                                 dragConstraints={{ left: 0, right: 0 }}
                             >
                                 <motion.img 

@@ -1,13 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import ImageSlider from "../../components/image-slider"
-import Card from 'react-bootstrap/Card';
+import { Card, Col, Container, Row } from 'react-bootstrap';
 import {
     images, 
+    homeIcons,
     jumbotron
 }  from "../../images";
 import './style.css';
 
 const Home = () => {
+
+    // var _CURRENT_ANGLE = 0;
+    const [currAngle, setCurrAngle] = useState(0);
+    const [currIndex, setCurrIndex] = useState(0);
+
+    // $("#button").on('click', function() {
+    //     _CURRENT_ANGLE += 120;
+
+    //     $("#parent-2").css({ transform: 'rotate(' + _CURRENT_ANGLE + 'deg)' });
+    //     $("#child-2").css({ transform: 'rotate(-' + _CURRENT_ANGLE + 'deg)' });
+    // });
+
+    const rotate = () => {
+        setCurrAngle(currAngle + 120);
+        setCurrIndex(currIndex === 2 ? 0 : currIndex + 1)
+    }
+
     return (
         <div>
             <Card className="shadow-gradient card-alt">
@@ -28,27 +46,36 @@ const Home = () => {
                     <ImageSlider slides={images}/>
                 </div>
             </Card>
-            <div className="my-5 container-fluid border boder-1 boder-danger">
-                <div className="row d-flex justify-content-center">
-                    <Card className="mx-3" style={{ width: "18rem" }}>
-                        <Card.Body>
-                        <Card.Title>{entityCards[0].type}</Card.Title>
-                        <Card.Text>{entityCards[0].description}</Card.Text>
-                        </Card.Body>
-                    </Card>
-                    <Card className="mx-3" style={{ width: "18rem" }}>
-                        <Card.Body>
-                        <Card.Title>{entityCards[1].type}</Card.Title>
-                        <Card.Text>{entityCards[1].description}</Card.Text>
-                        </Card.Body>
-                    </Card>
-                    <Card className="mx-3" style={{ width: "18rem" }}>
-                        <Card.Body>
-                        <Card.Title>{entityCards[2].type}</Card.Title>
-                        <Card.Text>{entityCards[2].description}</Card.Text>
-                        </Card.Body>
-                    </Card>
-                </div>
+            <div className="my-5 container-fluid">
+                <Container className="d-flex justify-content-center align-items-center services-container">
+                    <Row>
+                        <Col>
+                            <div 
+                                className="circle-path" 
+                                style={{transform: `rotate(${currAngle}deg)`}}
+                                onClick={rotate}
+                                >
+                                <div className="child" style={{transform: `rotate(${-currAngle}deg)`}}>
+                                    <img src={homeIcons.gov}/>
+                                </div>
+                                <div className="child1" style={{transform: `rotate(${-currAngle}deg)`}}>
+                                    <img src={homeIcons.nat}/>
+                                </div>
+                                <div className="child2" style={{transform: `rotate(${-currAngle}deg)`}}>
+                                    <img src={homeIcons.bus}/>
+                                </div>
+                                {/* <h2 className="entity-name style-1" style={{transform: `rotate(${-currAngle}deg)`}}>
+                                    {entityCards[currIndex].type}
+                                </h2> */}
+                            </div>
+                            <div className="d-flex justify-content-center entity-name-container">
+                                <h2 className="entity-name style-1">
+                                    {entityCards[currIndex].type}
+                                </h2>
+                            </div>
+                        </Col>
+                    </Row>
+                </Container>
                 <div>
                     <h2>Servicios</h2>
                     <p>
@@ -74,7 +101,7 @@ const entityCards = [
       description: "Lorem ipsum dolor sit amet, consectetur",
     },
     {
-      type: "Local Entrepreneur",
+      type: "Local Entrepreneurs",
       icon: "",
       description: "Lorem ipsum dolor sit amet, consectetur",
     },

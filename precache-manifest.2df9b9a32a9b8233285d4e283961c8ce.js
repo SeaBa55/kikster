@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "ca4438c363c57362dd87",
-    "url": "/kikster/static/css/main.98624f5b.chunk.css"
+    "revision": "1e947d11ea26247f5e7b",
+    "url": "/kikster/static/css/main.5e192d05.chunk.css"
   },
   {
-    "revision": "ca4438c363c57362dd87",
-    "url": "/kikster/static/js/main.ca4438c3.chunk.js"
+    "revision": "1e947d11ea26247f5e7b",
+    "url": "/kikster/static/js/main.1e947d11.chunk.js"
   },
   {
     "revision": "4e3eec0efd1bea118b1d",
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/kikster/static/js/runtime~main.73dea0ae.js"
   },
   {
-    "revision": "3ad08370658f0df9666d8649e32403b3",
+    "revision": "476584b55dce3ad4d87dabc7281c58b3",
     "url": "/kikster/index.html"
   }
 ];

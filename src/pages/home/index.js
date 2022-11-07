@@ -10,16 +10,8 @@ import './style.css';
 
 const Home = () => {
 
-    // var _CURRENT_ANGLE = 0;
     const [currAngle, setCurrAngle] = useState(0);
     const [currIndex, setCurrIndex] = useState(0);
-
-    // $("#button").on('click', function() {
-    //     _CURRENT_ANGLE += 120;
-
-    //     $("#parent-2").css({ transform: 'rotate(' + _CURRENT_ANGLE + 'deg)' });
-    //     $("#child-2").css({ transform: 'rotate(-' + _CURRENT_ANGLE + 'deg)' });
-    // });
 
     const rotate = () => {
         setCurrAngle(currAngle + 120);
@@ -47,34 +39,50 @@ const Home = () => {
                 </div>
             </Card>
             <div className="my-5 container-fluid">
-                <Container className="d-flex justify-content-center align-items-center services-container">
-                    <Row>
-                        <Col>
-                            <div 
-                                className="circle-path" 
-                                style={{transform: `rotate(${currAngle}deg)`}}
-                                onClick={rotate}
-                                >
-                                <div className="child" style={{transform: `rotate(${-currAngle}deg)`}}>
-                                    <img src={homeIcons.gov}/>
+                {/* <Container className="d-flex justify-content-center align-items-center services-container"> */}
+                <Container className="services-container d-flex align-items-center">
+                    <Container className="">
+                        <Row>
+                            <Col className="d-flex justify-content-start align-items-end">
+                                <h3 className="style-1" style={{color: "darkblue"}} > 
+                                    {entityCards[currIndex].decloration} 
+                                </h3>
+                            </Col>
+                        </Row>
+                        <Row className="services-container-partition">
+                            <Col className="d-flex justify-content-center align-items-center">
+                                <div className="spinner-container">
+                                    <div 
+                                        className="circle-path" 
+                                        style={{transform: `rotate(${currAngle}deg)`}}
+                                        onClick={rotate}
+                                        >
+                                        <div className="child" style={{transform: `rotate(${-currAngle}deg)`}}>
+                                            <img src={homeIcons.gov}/>
+                                        </div>
+                                        <div className="child1" style={{transform: `rotate(${-currAngle}deg)`}}>
+                                            <img src={homeIcons.nat}/>
+                                        </div>
+                                        <div className="child2" style={{transform: `rotate(${-currAngle}deg)`}}>
+                                            <img src={homeIcons.bus}/>
+                                        </div>
+                                    </div>
+                                    <div className="entity-name-container">
+                                        <h2 className="entity-name style-1">
+                                            {entityCards[currIndex].type}
+                                        </h2>
+                                    </div>
                                 </div>
-                                <div className="child1" style={{transform: `rotate(${-currAngle}deg)`}}>
-                                    <img src={homeIcons.nat}/>
-                                </div>
-                                <div className="child2" style={{transform: `rotate(${-currAngle}deg)`}}>
-                                    <img src={homeIcons.bus}/>
-                                </div>
-                                {/* <h2 className="entity-name style-1" style={{transform: `rotate(${-currAngle}deg)`}}>
-                                    {entityCards[currIndex].type}
-                                </h2> */}
-                            </div>
-                            <div className="d-flex justify-content-center entity-name-container">
-                                <h2 className="entity-name style-1">
-                                    {entityCards[currIndex].type}
-                                </h2>
-                            </div>
-                        </Col>
-                    </Row>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col className="d-flex justify-content-end">
+                            <h3 className="style-1" style={{color: "darkblue"}}> 
+                                {entityCards[currIndex].description} 
+                            </h3> 
+                            </Col>
+                        </Row>
+                    </Container>
                 </Container>
                 <div>
                     <h2>Servicios</h2>
@@ -96,19 +104,22 @@ const Home = () => {
 
 const entityCards = [
     {
-      type: "Government",
-      icon: "",
-      description: "Lorem ipsum dolor sit amet, consectetur",
+        decloration: "Kikster provides services for",
+        type: "Government",
+        icon: "",
+        description: "Lorem ipsum dolor sit amet, consectetur 1",
     },
     {
-      type: "Local Entrepreneurs",
-      icon: "",
-      description: "Lorem ipsum dolor sit amet, consectetur",
+        decloration: " Kikster is here to assist",
+        type: "Local Entrepreneurs",
+        icon: "",
+        description: "Lorem ipsum dolor sit amet, consectetur 2",
     },
     {
-      type: "Nature",
-      icon: "",
-      description: "Lorem ipsum dolor sit amet, consectetur",
+        decloration: "At the core of Kikster is",
+        type: "Nature",
+        icon: "",
+        description: "Lorem ipsum dolor sit amet, consectetur 3",
     },
   ];
   

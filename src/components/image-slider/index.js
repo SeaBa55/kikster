@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useOutletContext } from 'react-router-dom';
-import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
+import { AnimatePresence, motion } from "framer-motion"
 import './style.css';
 
 const ImageSlider = ({slides}) => {

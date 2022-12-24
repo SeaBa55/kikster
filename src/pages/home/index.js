@@ -50,17 +50,9 @@ const Home = () => {
                     </Card>
                 </div>
                 <div>
-                    <h2>Servicios</h2>
+                    <h2>Quiénes Somos</h2>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempus
-                        congue nunc volutpat risus fusce turpis lectus. Purus, gravida
-                        sagittis accumsan sem odio sed. Malesuada tortor nibh nibh nulla nec
-                        neque. Enim, suscipit auctor tristique pharetra, egestas risus urna
-                        imperdiet felis. Suspendisse maecenas ut egestas donec fermentum.
-                        Bibendum massa sit amet iaculis vitae. Odio elementum tincidunt id
-                        pharetra quisque in sed risus, urna. Morbi ullamcorper vestibulum
-                        maecenas molestie consequat congue.
-                    </p>
+                    Kikster es una firma de consultoría  especializada en la gestión de escenarios de naturaleza  que considera que el rol de las comunidades en el manejo de sus territorios representa una gran oportunidad que permite generar dinámicas socio económicas que contribuyen a la sostenibilidad,  apropiación del patrimonio cultural y ambiental de un destino y su área de influencia.</p>
                 </div>
             </div>
         </div>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ImageSlider from "../../components/image-slider"
 import { Card, Col, Container, Row } from 'react-bootstrap';
+import { portfolio }  from "../../portfolio";
 import {
     images,
     portfolioImages,
@@ -76,7 +77,7 @@ const Home = () => {
 
             <Card className="shadow-gradient-2 card-alt">
                 <div className="ofHidden">
-                    <ImageSlider slides={images}/>
+                    <ImageSlider slides={portfolio}/>
                 </div>
             </Card>
             <div className="my-5 container-fluid">

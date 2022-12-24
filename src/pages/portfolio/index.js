@@ -1,28 +1,31 @@
 import React from "react";
-import { Button, Card, Dropdown, Form, InputGroup } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
-import SearchFilterBarComponent from "../../components/search-filter-bar";
-import { portfolioImages } from "../../images";
+import { portfolio }  from "../../portfolio";
 import "./style.css";
-import { portfolio }  from "../../portfolio"
 
 const renderPortfolioCards = () => {
-  portfolio.forEach((element, index) => {
-    const collectRow = index && (index + 1)%3 === 0
-    let card = (
+  let row = [];
+  const size = portfolio.length-1;
+  const rowWidth = 3;
+  const fragment = [];
+  for (let index = 0; index <= size; index++) {
+    const collectRow = index && (index)%rowWidth === 0
+    const project = portfolio[index];
+    const card = (
       <Card border="light" className="m-4 px-0" style={{ width: "20rem" }}>
         <Card.Img
-          className="rounded-0"
-          style={{ height: "15rem" }}
+          className="rounded-0 test2"
+          style={{ height: "10rem" }}
           variant="top"
-          src={element.primary_img}
+          src={project.primary_img}
         />
         <Card.Body>
-          <Card.Title>{element.title}</Card.Title>
+          <Card.Title>{project.title}</Card.Title>
           <Card.Text className="mb-0 pb-1">
-            {element.location}
+            {project.location}
           </Card.Text>
-          <Card.Text>{element.description}</Card.Text>
+          <Card.Text>{project.desciption}</Card.Text>
             <Button variant="link" className="ps-0 text-dark">
             <Link to="project">Learn More</Link>
               <span style={{ color: "green" }} className="ps-2">
@@ -44,18 +47,29 @@ const renderPortfolioCards = () => {
         </Card.Body>
       </Card>
     );
-
     if (collectRow) {
-      return (
-        <div className="row d-flex justify-content-center mt-1 mb-3 text-start">
-          {card}
-        </div>
-      )
+      fragment.push(
+        [
+          <div className="row d-flex justify-content-center mt-1 mb-3 text-start">
+            {row}
+          </div>
+        ]
+      );
+      row = [card];
     } else {
-      card += card;
-      // index++;
+      row.push(card);
     }
-  })
+  };
+
+  fragment.push(
+    [
+      <div className="row d-flex justify-content-center mt-1 mb-3 text-start">
+        {row}
+      </div>
+    ]
+  );
+  
+  return fragment
 };
 
 const Portfolio = () => {

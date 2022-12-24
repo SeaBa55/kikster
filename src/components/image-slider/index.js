@@ -324,7 +324,8 @@ const ImageSlider = ({slides}) => {
                             >
                                 <motion.img 
                                     style={imageSliderImgStyles} 
-                                    src = {slides[rangeIndex].url}
+                                    // src = {slides[rangeIndex].url}
+                                    src = {slides[rangeIndex].carousel_img}
                                 />
                                 <motion.div style={imageSliderSubDivStyles(scope)}/>
                                 {

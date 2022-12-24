@@ -34,3 +34,7 @@
   border-radius: none !important;
   border-width: 0px !important;
 }
+
+.background-img {
+  background-image: "url(IMG_7425-min.JPG)"
+}

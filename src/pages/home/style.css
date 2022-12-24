@@ -27,6 +27,11 @@
   overflow: hidden;
 }
 
+.card-img-top {
+  height: 70vh !important;
+  object-fit: cover;
+}
+
 .card-img-top, .card-alt {
   border: none !important;
   border-radius: 0px !important;
@@ -52,8 +57,8 @@
 .circle-path {
 	position: relative;
   margin: auto;
-	width: 300px;
-	height: 300px;
+	width: 500px;
+	height: 500px;
 	border: 1px solid rgba(0,0,0,0.1);
 	border-radius: 50%;
 	/* transform: rotate(0deg); */
@@ -64,18 +69,18 @@
 }
 
 .child {
-	top: -40px; 
-	left: 110px;   
+	top: -66.7px;
+	left: 183.3px;   
 }
 
 .child1 {
-	top: 184px; 
-	left: 237px;   
+	top: 306.7px; 
+	left: 395px;   
 }
 
 .child2 {
-	top: 183px; 
-	left: -20px;   
+	top: 305px; 
+	left: -33.3px;   
 }
 
 .child, .child1, .child2 {

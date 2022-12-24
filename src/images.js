@@ -38,7 +38,7 @@ const images = [
 const jumbotron = [
     { 
         title: "jumbotronDefault",
-        url: `${baseURL}/images/IMG_8208-min.JPG`
+        url: `${baseURL}/images/IMG_8208.JPG`
     }
 ];
 

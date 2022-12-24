@@ -2,14 +2,16 @@ import React, { useState } from "react";
 import ImageSlider from "../../components/image-slider"
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import {
-    images, 
+    images,
+    portfolioImages,
     homeIcons,
     jumbotron
 }  from "../../images";
 import './style.css';
+import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
 
 const Home = () => {
-
+    const baseURL = process.env.PUBLIC_URL; 
     const [currAngle, setCurrAngle] = useState(0);
     const [currIndex, setCurrIndex] = useState(0);
 
@@ -24,15 +26,54 @@ const Home = () => {
                 <Card.Img
                     src={jumbotron[0].url}
                     variant="top"
-                    className="img-fluid test"
+                    className="test"
                     alt="test"
                 />
             </Card>
+            
             <div 
-                style={{height: "50vh"}} 
-                className="bg-black container-fluid d-flex align-items-center justify-content-center"> 
-                <h1 className="my-5 text-white">animated KIKSTER logo</h1>
+                style={{height: "20vh"}} 
+                className="bg-black container-fluid d-flex flex-column align-items-center justify-content-center"
+            > 
+                {/* <h1 className="my-5 text-white">Kikster_Oficial_Recuadros_v2.png</h1> */}
+                <Row>
+                    <img
+                        src={`${baseURL}/Kikster_Oficial_Transparente_Name.png`}
+                        // style= {iconImageStyle}
+                        width="386"
+                        height="59"
+                        className="d-inline-block align-top"
+                        alt="Kikster logo"
+                    />
+                </Row>
+                <Row>
+                    <AnimatePresence initial="false" mode="popLayout">
+                        <motion.div
+                            initial={{ 
+                                y: 10,
+                            }}
+                            animate={{ 
+                                y: 20,
+                            }}
+                            exit={{ 
+                                y: 0,
+                            }}
+                            transition={{
+                                delay: 0.7,
+                                type: 'spring',
+                                // bounce: .5,
+                                opacity: { 
+                                    ease: "linear",
+                                    duration: 1
+                                }
+                            }}
+                        >
+                            ⯆
+                        </motion.div>
+                    </AnimatePresence>
+                </Row>
             </div>
+
             <Card className="shadow-gradient-2 card-alt">
                 <div className="ofHidden">
                     <ImageSlider slides={images}/>
@@ -77,9 +118,9 @@ const Home = () => {
                         </Row>
                         <Row>
                             <Col className="d-flex justify-content-end">
-                            <h3 className="style-1" style={{color: "darkblue"}}> 
-                                {entityCards[currIndex].description} 
-                            </h3> 
+                                <h3 className="style-1" style={{color: "darkblue"}}> 
+                                    {entityCards[currIndex].description} 
+                                </h3> 
                             </Col>
                         </Row>
                     </Container>
@@ -102,6 +143,14 @@ const Home = () => {
     );
 }
 
+
+// Entidades territoriales: Gobernaciones, alcaldías, entidades de gobierno. 
+
+// Operadores turísticos: agencias de viaje, operadores de destino, operadores turísticos, operadores de turismo comunitario, emprendimientos,  y aquellos que  apuntan a ser operadores.
+
+
+// Entidades de cooperación internacional.
+
 const entityCards = [
     {
         decloration: "Kikster provides services for",
@@ -121,6 +170,27 @@ const entityCards = [
         icon: "",
         description: "Lorem ipsum dolor sit amet, consectetur 3",
     },
-  ];
+];
+
+// const entityCards = [
+//     {
+//         decloration: "Kikster provides services for",
+//         type: "Government",
+//         icon: "",
+//         description: "Lorem ipsum dolor sit amet, consectetur 1",
+//     },
+//     {
+//         decloration: " Kikster is here to assist",
+//         type: "Local Entrepreneurs",
+//         icon: "",
+//         description: "Lorem ipsum dolor sit amet, consectetur 2",
+//     },
+//     {
+//         decloration: "At the core of Kikster is",
+//         type: "Nature",
+//         icon: "",
+//         description: "Lorem ipsum dolor sit amet, consectetur 3",
+//     },
+// ];
   
 export default Home;

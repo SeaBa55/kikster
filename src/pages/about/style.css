@@ -1,0 +1,15 @@
+ 
+.bg-logo-blue {
+    background-color: #001F61;
+    color: #fff
+}
+
+.bg-black {
+    background-color: #000;
+    color: white
+}
+
+.underline-green {
+    text-decoration: underline green; 
+    text-decoration-thickness: 8px;
+}

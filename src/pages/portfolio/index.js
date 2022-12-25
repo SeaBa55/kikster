@@ -10,7 +10,7 @@ const renderPortfolioCards = () => {
   const rowWidth = 3;
   const fragment = [];
   for (let index = 0; index <= size; index++) {
-    const collectRow = index && (index)%rowWidth === 0
+    const collectRow = index && (index)%rowWidth === 0;
     const project = portfolio[index];
     const card = (
       <Card border="light" className="m-4 px-0" style={{ width: "20rem" }}>
@@ -26,8 +26,8 @@ const renderPortfolioCards = () => {
             {project.location}
           </Card.Text>
           <Card.Text>{project.desciption}</Card.Text>
-            <Button variant="link" className="ps-0 text-dark">
-            <Link to="project">Learn More</Link>
+            {/* <Button variant="link" className="ps-0 text-dark">
+              <Link to="project">Learn More</Link>
               <span style={{ color: "green" }} className="ps-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +43,7 @@ const renderPortfolioCards = () => {
                   />
                 </svg>
               </span>
-            </Button>
+            </Button> */}
         </Card.Body>
       </Card>
     );

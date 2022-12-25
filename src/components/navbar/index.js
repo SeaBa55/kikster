@@ -67,7 +67,7 @@ const NavBar = () => {
                             Portfolio
                         </NavLink>
                     </Nav.Link>
-                    <Nav.Link as="div">
+                    {/* <Nav.Link as="div">
                         <NavLink 
                             to="contact"
                             style= {{color: "inherit"}}
@@ -76,7 +76,7 @@ const NavBar = () => {
                         >
                             Contact Us
                         </NavLink>
-                    </Nav.Link>
+                    </Nav.Link> */}
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

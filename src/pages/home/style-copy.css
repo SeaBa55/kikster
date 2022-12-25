@@ -1,0 +1,30 @@
+/* .shadow-gradient:after {
+  content: "";
+  display: flex;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, black);
+  margin-top: -10%;
+  margin-bottom: 50%;
+  height: 20%;
+  width: 100%;
+} */
+
+
+.shadow-gradient-2::before {
+    content: "";
+    display: flex;
+    position: absolute;
+    margin-bottom: 25%;
+    left: 0;
+    right: 0;
+    height: 25%;
+    background-image: linear-gradient(
+      to bottom,
+      black 0%,
+      rgb(0, 0, 0) 60%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  
+  }

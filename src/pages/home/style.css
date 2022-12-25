@@ -27,10 +27,93 @@
   overflow: hidden;
 }
 
+.card-img-top {
+  height: 70vh !important;
+  object-fit: cover;
+}
+
 .card-img-top, .card-alt {
   border: none !important;
   border-radius: 0px !important;
   border-color: none !important;
   border-radius: none !important;
   border-width: 0px !important;
+}
+
+.services-container {
+  height: 100vh;
+}
+
+.services-container-partition {
+  /* height: 33.33%; */
+  min-height: fit-content;
+}
+
+.spinner-container {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.circle-path {
+	position: relative;
+  margin: auto;
+	width: 500px;
+	height: 500px;
+	border: 1px solid rgba(0,0,0,0.1);
+	border-radius: 50%;
+	/* transform: rotate(0deg); */
+	transition: transform 0.4s linear;
+  cursor: pointer;
+  user-select: none;
+  z-index: 2;
+}
+
+.child {
+	top: -66.7px;
+	left: 183.3px;   
+}
+
+.child1 {
+	top: 306.7px; 
+	left: 395px;   
+}
+
+.child2 {
+	top: 305px; 
+	left: -33.3px;   
+}
+
+.child, .child1, .child2 {
+	position: absolute;
+	width: 80px;
+	height: 80px;
+	/* transform: rotate(0deg); */
+	transition: transform 0.3s linear;
+}
+
+.child img, .child1 img, .child2 img {
+	max-width: 100%;
+	border-radius: 20%;
+  background: white;
+  padding: 5px
+}
+
+.entity-name-container {
+  position: relative;
+  margin: auto;
+	width: 300px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.entity-name {
+  position: absolute;
+  /* transform: translate(0, 0%); */
+  /* left: 25%; */
+  /* top: 10%; */
+  width: 220px;
+  top: -230px; 
+	left: 40px;
+  /* margin: auto; */
+  /* transition: transform 0.7s linear; */
 }

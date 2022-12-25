@@ -38,7 +38,7 @@ const images = [
 const jumbotron = [
     { 
         title: "jumbotronDefault",
-        url: `${baseURL}/images/IMG_8208-min.JPG`
+        url: `${baseURL}/images/IMG_8208.JPG`
     }
 ];
 
@@ -80,4 +80,10 @@ const projectImages = [
     }
 ]
 
-export { images, jumbotron, portfolioImages, projectImages };
+const homeIcons = {
+    gov: `${baseURL}/icons/capitol-washington-svgrepo-com.svg`,
+    bus: `${baseURL}/icons/store-coffee-shop-svgrepo-com.svg`,
+    nat: `${baseURL}/icons/pines-tree-svgrepo-com.svg`
+}
+
+export { images, jumbotron, portfolioImages, projectImages, homeIcons };

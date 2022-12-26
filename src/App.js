@@ -27,7 +27,7 @@ function App() {
       <div className="page-content">
         <Outlet context={[isMobile, setIsMobile]}/>
       </div>
-      {/* <Footer/> */}
+      <Footer/>
     </div>
   );
 }

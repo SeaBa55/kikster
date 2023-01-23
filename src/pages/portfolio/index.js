@@ -24,9 +24,24 @@ const renderPortfolioCards = () => {
         <Card.Body>
           <Card.Title>{project.title}</Card.Title>
           <Card.Text className="mb-0 pb-1">
-            {project.location}
+          <p className="text-sm-white">
+              <span className="px-2 text-success">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-geo-alt-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+                </svg>
+              </span>
+              {/* Lobortis Quisque */}
+              {project.location}
+            </p>
           </Card.Text>
-          <Card.Text>{project.desciption}</Card.Text>
+          {/* <Card.Text>{project.desciption}</Card.Text> */}
             <Button variant="link" className="ps-0 text-dark">
               <Link to={link}>Learn More</Link>
               <span style={{ color: "green" }} className="ps-2">

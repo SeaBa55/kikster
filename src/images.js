@@ -67,7 +67,7 @@ const portfolioImages = [
         title:"beach-entreprenuers",
         url:`${baseURL}/images/IMG_5128-min.JPG`
     }
-]
+];
 
 const projectImages = [
     {
@@ -78,7 +78,23 @@ const projectImages = [
         title: "smoky-mountain",
         url:`${baseURL}/images/IMG_2519_MOV_AdobeExpress.gif`
     }
-]
+];
+
+const aboutImages = [
+    {
+        title: "hiking-mountain-banner",
+        url:`${baseURL}/images/IMG_7307-banner.JPG`
+    },
+    {
+        title: "lake-island",
+        url:`${baseURL}/images/IMG_7312.JPG`
+    },
+    {
+        title: "cactus-valley",
+        url:`${baseURL}/images/IMG_7309.PNG`
+    }
+];
+
 
 const homeIcons = {
     gov: `${baseURL}/icons/capitol-washington-svgrepo-com.svg`,
@@ -86,4 +102,4 @@ const homeIcons = {
     nat: `${baseURL}/icons/pines-tree-svgrepo-com.svg`
 }
 
-export { images, jumbotron, portfolioImages, projectImages, homeIcons };
+export { images, jumbotron, portfolioImages, projectImages, aboutImages, homeIcons };

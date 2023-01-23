@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 import App from "./App";
 import ErrorPage from "./pages/error";
 import Home from "./pages/home";
@@ -13,7 +13,6 @@ import "./index.css";
 import Project from "./pages/project";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-
 const baseURL = process.env.PUBLIC_URL;
 const router = createBrowserRouter(
   [
@@ -38,8 +37,17 @@ const router = createBrowserRouter(
               element: <Portfolio />,
             },
             {
-              path: "project",
-              element: <Project />,
+              path: "project/",
+              children: [
+                {
+                  index: true,
+                  element: <Navigate to={-1} />,
+                },
+                {
+                  path: ":projectId",
+                  element: <Project />,
+                }
+              ],
             },
           ],
         },

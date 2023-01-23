@@ -39,21 +39,21 @@
     /* background-image: linear-gradient(rgba(255, 255, 255, 0), rgb(41, 41, 41), rgba(255, 255, 255, 0)); */
 
     /* background-color: brown; */
-    position: absolute;
+    /* position: absolute;
     left: 0;
     bottom: 0;
-    width: 100%;
+    width: 100%; */
 
     /* Set the fixed height of the footer here */
-    height: 56px;
+    /* height: 56px; */
 
     /* Vertically center the text there */
-    line-height: 55px; 
+    /* line-height: 55px;  */
 
     /* Text color not active since it is muted */
-    color: black;
-    text-align: center;
-    font-size: 12px;
+    color: white;
+    /* text-align: center; */
+    /* font-size: 12px; */
 }
 
 /* Contact popover arrow offset */

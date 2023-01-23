@@ -9,7 +9,7 @@ import {
     jumbotron
 }  from "../../images";
 import './style.css';
-import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Home = () => {
     const baseURL = process.env.PUBLIC_URL; 

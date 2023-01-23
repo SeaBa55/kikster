@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useOutletContext } from 'react-router-dom';
-import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import './style.css';
 
 const ImageSlider = ({slides}) => {
@@ -280,6 +280,8 @@ const ImageSlider = ({slides}) => {
                         const xInit = effectType[mode][0]*dist*direction;
                         const xExit = effectType[mode][1]*dist*direction;
                         const scope = rangeIndex === currIndex;
+                        const img = slides[rangeIndex].carousel_img;
+                        const link = `/portfolio/project/${slides[rangeIndex].id}`
                         return (
                             <motion.div
                                 layout
@@ -325,7 +327,7 @@ const ImageSlider = ({slides}) => {
                                 <motion.img 
                                     style={imageSliderImgStyles} 
                                     // src = {slides[rangeIndex].url}
-                                    src = {slides[rangeIndex].carousel_img}
+                                    src = {img}
                                 />
                                 <motion.div style={imageSliderSubDivStyles(scope)}/>
                                 {
@@ -357,8 +359,8 @@ const ImageSlider = ({slides}) => {
                                                     }
                                                 }}
                                             >   
-                                                {/* <Link to="/portfolio/project"> */}
-                                                <Link to="/portfolio">
+                                                <Link to={link}>
+                                                {/* <Link to="/portfolio"> */}
                                                     <motion.button 
                                                         layout
                                                         type="button" 

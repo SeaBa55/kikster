@@ -1,9 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { Card } from "react-bootstrap";
 import Banner from "../../components/banner";
-import { projectImages } from "../../images";
+import { portfolio } from "../../portfolio";
+import { startCase } from "lodash";
 
 const Project = () => {
+  const { projectId } = useParams();
+  const navigate = useNavigate();
+  const [project, setProject] = useState(false);
+
+  useEffect(() => {
+    const project = portfolio.find(item => item.id === projectId);
+
+    if (project) { 
+      setProject(project);
+    } else { 
+      navigate(-1);
+    };
+  }, [])
+  
   return (
     <>
       <Banner></Banner>
@@ -19,18 +35,17 @@ const Project = () => {
               position: "relative",
             }}
             variant="top"
-            src={projectImages[0].url}
+            src={project.primary_img}
           ></Card.Img>
         </div>
       </div>
-
       <div className="container-fluid" style={{ position: "relative" }}>
         <div className="row d-flex justify-content-start mt-4 mt-md-0 ms-md-2">
           <h2 className="ms-5 py-2 col-6 col-lg-4 col-xl-3 bg-success text-white">
-            Project Name
+            {/* Project Name */}
+            {startCase(project.id)}
           </h2>
         </div>
-
         <div className="ms-5 my-3 row d-flex justify-content-center text-start">
           <div className="col-6">
             <p className="text-sm-white">
@@ -46,7 +61,8 @@ const Project = () => {
                   <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
                 </svg>
               </span>
-              Lobortis Quisque
+              {/* Lobortis Quisque */}
+              {project.location}
             </p>
           </div>
           <div className="col-6">
@@ -66,7 +82,8 @@ const Project = () => {
                   />
                 </svg>
               </span>
-              24,000 sq. ft.
+              {/* 24,000 sq. ft. */}
+              {project.area}
             </p>
           </div>
         </div>
@@ -87,7 +104,8 @@ const Project = () => {
                   <path d="M16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-6.664-1.21c-1.11 0-1.656-.767-1.703-1.407h.683c.043.37.387.82 1.051.82.844 0 1.301-.848 1.305-2.164h-.027c-.153.414-.637.79-1.383.79-.852 0-1.676-.61-1.676-1.77 0-1.137.871-1.809 1.797-1.809 1.172 0 1.953.734 1.953 2.668 0 1.805-.742 2.871-2 2.871zm-2.89-5.435v5.332H5.77V8.079h-.012c-.29.156-.883.52-1.258.777V8.16a12.6 12.6 0 0 1 1.313-.805h.632z" />
                 </svg>
               </span>
-              Feb 2022
+              {/* Feb 2022 */}
+              {project.date}
             </p>
           </div>
           <div className="col-4">
@@ -105,7 +123,8 @@ const Project = () => {
                   <path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z" />
                 </svg>
               </span>
-              Quisque
+              {/* Quisque */}
+              {project.location}
             </p>
           </div>
           <div className="col-4">
@@ -124,7 +143,8 @@ const Project = () => {
                   <path d="M8 13.5a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11zm0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12z" />
                 </svg>
               </span>
-              570,000
+              {/* 570,000 */}
+              {project.budget}
             </p>
           </div>
         </div>
@@ -132,15 +152,16 @@ const Project = () => {
 
       <div className="container border-top border-success border-3">
         <div className="mt-5 mt-md-0 d-flex row text-start">
-          <h3 className="my-3">Donec Dolor Non</h3>
+          {/* <h3 className="my-3">Donec Dolor Non</h3>
           <p>
             Bibendum massa sit amet iaculis vitae. Odio elementum tincidunt id
             pharetra quisque in sed risus, urna. Morbi ullamcorper vestibulum
             maecenas molestie consequat congue.
-          </p>
+          </p> */}
           <div className="col-md-7">
-            <h3 className="my-3">Vulputate morbi leo</h3>
-            <p>
+            <h3 className="my-3">{project.title}</h3>
+            {project.desciption}
+            {/* <p>
               Risus turpis feugiat eu, mauris etiam sit amet dolor ipsum.
               Pretium nunc consectetur ac quis. Neque euismod proin tortor
               turpis ornare magna id vestibulum. Egestas aliquam vitae, integer
@@ -157,15 +178,15 @@ const Project = () => {
               Imperdiet convallis pellentesque sed turpis leo posuere est. Eu
               vel dignissim sem massa tempus sit. Vitae, sed id nunc libero
               vitae ridiculus pharetra.
-            </p>
-            <h3 className="my-3">Amet</h3>
+            </p> */}
+            {/* <h3 className="my-3">Amet</h3>
             <p>
               Viverra imperdiet amet accumsan blandit quis gravida urna enim,
               integer. Sit tellus mi tempor libero id. Proin pharetra, vulputate
               nunc enim, ac, lorem quis. Fermentum proin eget in eget maecenas
               imperdiet tristique. Odio massa, ipsum neque molestie sit purus,
               diam dolor tempor.
-            </p>
+            </p> */}
           </div>
           <div className="col-md-5">
             <Card.Img
@@ -177,7 +198,7 @@ const Project = () => {
                 objectFit: "cover",
               }}
               variant="top"
-              src={projectImages[1].url}
+              src={project.secondary_img}
             ></Card.Img>
             <p className="ps-3">
               <span className="text-success">

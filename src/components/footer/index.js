@@ -24,8 +24,3 @@ const Footer = () => {
 }
 
 export default Footer;
-
-// Cra. 4 # 59-21
-// Cel +57 318 3593342
-// hello@kikster.live
-// Bogotá D.C. | Colombia

@@ -111,4 +111,12 @@ const portfolio = [
     }
 ];
 
-export { portfolio };
+const adminPattern = [
+    'navbar-link-home',
+    'navbar-container',
+    'navbar-link-home',
+    'navbar-container', 
+    'navbar-container',
+]
+
+export { portfolio, adminPattern };

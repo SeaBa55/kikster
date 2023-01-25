@@ -2,16 +2,73 @@ import React, { useEffect, useState } from 'react';
 import { Outlet } from "react-router-dom";
 import NavBar from "./components/navbar";
 import Footer from "./components/footer";
+import { adminPattern } from "./portfolio";
 import './App.css';
 
 function App() {
-
   const [isMobile, setIsMobile] = useState(false);
+  const [listening, setListening] = useState(false);
+  // const [clickProgression, setClickProgression] = useState("terst");
+
+  let clickProgression = [];
+  let timeoutID;
 
   useEffect(() => {
     window.addEventListener('load', handleResize);
     window.addEventListener("resize", handleResize);
-  }, [])
+    window.addEventListener("click", handleClick);
+  }, []);
+
+  // useEffect(() => {
+
+  // },[clickProgression && listening]);
+
+  // useEffect(() => {
+  //   if(!listening){
+  //     setClickProgression([]);
+  //     console.log("click progression reset");
+  //   }
+  // },[listening])
+
+  const openAdminPortal = () => {
+    console.log("in admin mode")
+  };
+
+  const reset = () => {
+    setListening(false);
+    console.log("listening is off");
+    clickProgression = [];
+    console.log("click progression reset");
+  };
+
+  const startTimer = () => {
+    timeoutID = setTimeout(() => {
+      console.log("timeout");
+      reset();
+    }, 10000)
+  };
+
+  const handleClick = (event) => {
+    const currentId = event.target.id;
+    if (clickProgression.length === 0) {
+      console.log("listening is on")
+      setListening(true);
+      startTimer();
+    }
+    clickProgression.push(currentId);
+    console.log(clickProgression);
+    if (clickProgression.length === 5) {
+      const checKey = clickProgression.every((item, index) => item === adminPattern[index]);
+      if (checKey) {
+        console.log("its a match!");
+        openAdminPortal();
+      }else {
+        console.log("its not a match");
+      };
+      reset();
+      clearTimeout(timeoutID);
+    }
+  };
 
   const handleResize = () => {
     if (window.innerWidth < 720) {

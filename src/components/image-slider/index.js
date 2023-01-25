@@ -327,7 +327,7 @@ const ImageSlider = ({slides}) => {
                                 <motion.img 
                                     style={imageSliderImgStyles} 
                                     // src = {slides[rangeIndex].url}
-                                    src = {img}
+                                    src={img}
                                 />
                                 <motion.div style={imageSliderSubDivStyles(scope)}/>
                                 {

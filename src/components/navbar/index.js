@@ -27,14 +27,23 @@ const NavBar = () => {
     }
 
     return (
-        <Navbar onToggle={toggle} expanded={navExpanded} expand="lg" bg="light" variant="light" sticky="top">
-            <Navbar.Brand>
+        <Navbar 
+            id="navbar-container"
+            onToggle={toggle} 
+            expanded={navExpanded} 
+            expand="lg" 
+            bg="light" 
+            variant="light" 
+            sticky="top"
+        >
+            <Navbar.Brand id="navbar-brand">
                 <NavLink
                     to="/"
                     style= {{color: "inherit"}}
                     className= "text-decoration-none"
                 >
                     <img
+                        id="navbar-link-home"
                         src={`${baseURL}/Kikster_Oficial_Recuadros_K.png`}
                         style= {iconImageStyle}
                         width="40"
@@ -44,11 +53,24 @@ const NavBar = () => {
                     />
                 </NavLink>
             </Navbar.Brand>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
-            <Navbar.Collapse>
-                <Nav className="justify-content-end" style={{ width: "100%" }}>
-                    <Nav.Link as="div">
+            <Navbar.Toggle
+                id="navbar-toggle-hamburger"
+                aria-controls="responsive-navbar-nav"
+            />
+            <Navbar.Collapse
+                id="navbar-collapse-container"
+            >
+                <Nav
+                    id="nav-links-container"
+                    className="justify-content-end" 
+                    style={{ width: "100%" }}
+                >
+                    <Nav.Link
+                        id="navlink-about"
+                        as="div"
+                    >
                         <NavLink
+                            id="navlink-about-link"
                             to="about"
                             style= {{color: "inherit"}}
                             className= "text-decoration-none"
@@ -57,8 +79,12 @@ const NavBar = () => {
                             About Us
                         </NavLink>
                     </Nav.Link>
-                    <Nav.Link as="div">
+                    <Nav.Link
+                        id="navlink-portfolio"
+                        as="div"
+                    >
                         <NavLink
+                            id="navlink-portfolio-link"
                             to="portfolio"
                             style= {{color: "inherit"}}
                             className="text-decoration-none"
@@ -67,8 +93,12 @@ const NavBar = () => {
                             Portfolio
                         </NavLink>
                     </Nav.Link>
-                    {/* <Nav.Link as="div">
-                        <NavLink 
+                    {/* <Nav.Link
+                        id="navlink-contact"
+                        as="div"
+                    >
+                        <NavLink
+                            id="navlink-contact-link"
                             to="contact"
                             style= {{color: "inherit"}}
                             className="text-decoration-none"

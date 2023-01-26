@@ -1,0 +1,56 @@
+.login {
+    position: fixed;
+    /* width: 100px;
+    height: 100px; */
+    /* background-color: blue; */
+    z-index: 11;
+    top: 30%;
+    left: 40.7%;
+    margin: 0;
+
+};
+
+/* .backdrop {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    opacity: 50%;
+    z-index: 10;
+    top: 7%
+} */
+
+.svg-wrapper {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 auto;
+    width: 320px; 
+}
+.shape {
+    stroke-dasharray:  0 1260;
+    stroke-dashoffset: 1260;
+    stroke-width: 5px;
+    fill: transparent;
+    stroke: #19f6e8;
+    border-radius: 20px;
+    transition:
+        stroke-width 1s, 
+        stroke-dashoffset 2s, 
+        stroke-dasharray 2s, 
+        stroke 2s;
+}
+/* .svg-wrapper:hover .shape {
+    stroke-width: 2px;
+    stroke-dashoffset: 0;
+    stroke-dasharray: 1260;
+    stroke: white;
+} */
+
+.animate-border {
+    stroke-width: 2px;
+    stroke-dashoffset: 0;
+    stroke-dasharray: 1260;
+    stroke: white;
+}

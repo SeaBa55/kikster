@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Outlet } from "react-router-dom";
+import LoginPortal from "./components/login-portal"
 import NavBar from "./components/navbar";
 import Footer from "./components/footer";
 import { adminPattern } from "./portfolio";
@@ -8,6 +9,7 @@ import './App.css';
 function App() {
   const [isMobile, setIsMobile] = useState(false);
   const [listening, setListening] = useState(false);
+  const [enabled, setEnabled] = useState(false);
   // const [clickProgression, setClickProgression] = useState("terst");
 
   let clickProgression = [];
@@ -31,7 +33,8 @@ function App() {
   // },[listening])
 
   const openAdminPortal = () => {
-    console.log("in admin mode")
+    console.log("in admin mode");
+    setEnabled(true);
   };
 
   const reset = () => {
@@ -82,6 +85,7 @@ function App() {
     <div className="App">
       <NavBar />
       <div className="page-content">
+        {enabled && <LoginPortal />}
         <Outlet context={[isMobile, setIsMobile]}/>
       </div>
       <Footer/>

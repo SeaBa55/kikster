@@ -85,7 +85,8 @@ function App() {
     <div className="App">
       <NavBar />
       <div className="page-content">
-        {enabled && <LoginPortal />}
+        {/* {enabled && <LoginPortal />} */}
+        <LoginPortal />
         <Outlet context={[isMobile, setIsMobile]}/>
       </div>
       <Footer/>

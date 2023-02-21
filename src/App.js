@@ -15,11 +15,12 @@ function App() {
   let clickProgression = [];
   let timeoutID;
 
+
   useEffect(() => {
     window.addEventListener('load', handleResize);
     window.addEventListener("resize", handleResize);
     window.addEventListener("click", handleClick);
-  }, []);
+  },);
 
   // useEffect(() => {
 
@@ -35,6 +36,13 @@ function App() {
   const openAdminPortal = () => {
     console.log("in admin mode");
     setEnabled(true);
+    reset();
+    clearTimeout(timeoutID);
+  };
+
+  const closeAdminPortal = () => {
+    console.log("admin mode closed");
+    setEnabled(false);
   };
 
   const reset = () => {
@@ -53,23 +61,35 @@ function App() {
 
   const handleClick = (event) => {
     const currentId = event.target.id;
-    if (clickProgression.length === 0) {
-      console.log("listening is on")
-      setListening(true);
-      startTimer();
+    if (enabled) {
+      inAdminMode(currentId);
+    } else {
+      if (clickProgression.length === 0) {
+        console.log("listening is on")
+        setListening(true);
+        startTimer();
+      }
+      clickProgression.push(currentId);
+      console.log(clickProgression);
+      if (clickProgression.length === 5) {
+        const checKey = clickProgression.every((item, index) => item === adminPattern[index]);
+        if (checKey) {
+          console.log("its a match!");
+          openAdminPortal();
+        }else {
+          console.log("its not a match");
+        };
+        reset();
+        clearTimeout(timeoutID);
+      }
     }
-    clickProgression.push(currentId);
-    console.log(clickProgression);
-    if (clickProgression.length === 5) {
-      const checKey = clickProgression.every((item, index) => item === adminPattern[index]);
-      if (checKey) {
-        console.log("its a match!");
-        openAdminPortal();
-      }else {
-        console.log("its not a match");
-      };
-      reset();
-      clearTimeout(timeoutID);
+  };
+
+  const inAdminMode = (id) => {
+    if (id==="back-drop") {
+      closeAdminPortal();
+    }else{
+      console.log("currently using admin mode");
     }
   };
 
@@ -85,8 +105,7 @@ function App() {
     <div className="App">
       <NavBar />
       <div className="page-content">
-        {/* {enabled && <LoginPortal />} */}
-        <LoginPortal />
+        {enabled && <LoginPortal />}
         <Outlet context={[isMobile, setIsMobile]}/>
       </div>
       <Footer/>

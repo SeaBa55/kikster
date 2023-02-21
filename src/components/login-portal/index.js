@@ -11,7 +11,7 @@ const LoginPortal = (ref) => {
 
     return (
         <>
-            <div className="back-drop"/>
+            <div className="back-drop" id="back-drop"/>
             <div className="login-wrapper">
                 <div className="svg-wrapper">
                     <svg height="300" width="320" >
@@ -20,8 +20,8 @@ const LoginPortal = (ref) => {
                     <motion.div
                         className="text2"
                         initial={{ 
-                            y: -100, 
-                            scale: 0.9, 
+                            y: -20, 
+                            scale: 0.8, 
                             opacity: 0.0,
                         }}
                         animate={{
@@ -35,13 +35,11 @@ const LoginPortal = (ref) => {
                                 duration: 1
                             },
                             duration: 0.1,
-                            type: 'spring',
-                            damping: 10,
                             delay: 1.6
                         }}
                     >
                         <div className='admin-mode-label shimmer'>
-                            ADMIN MODE
+                            <h3>ADMIN MODE</h3>
                         </div>
                         <form>
                             <div className='admin-mode-user'>
@@ -51,6 +49,9 @@ const LoginPortal = (ref) => {
                             <div className='admin-mode-pass'>
                                 <label htmlFor="pass">password</label>
                                 <input type="password" id="pass" name="pass"/>
+                            </div>
+                            <div className='admin-mode-submit'>
+                                <input class="btn btn-outline-light" type="submit" value="Submit"></input>
                             </div>
                         </form>
                     </motion.div>

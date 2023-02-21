@@ -4,7 +4,7 @@
     height: 100vh;
     background-color: black;
     color: white;
-    opacity: 70%;
+    opacity: 90%;
     z-index: 10;
     top: 0%;
 }
@@ -33,7 +33,7 @@
     line-height: 32px;
     letter-spacing: 8px;
     color: white;
-    top: -265px;
+    top: -275px;
     position: relative;
 }
 .animate-border {
@@ -49,11 +49,15 @@
     top: 30%;
 }
 .admin-mode-label {
-    /* font-family: "lobster"; */
-    /* color: orangered; */
-    margin-bottom: 15%;
+    margin-bottom: 5%;
 }
 .admin-mode-user {
+    /* font-size: medium; */
+    margin-bottom: 2.5%;
+}
+
+.admin-mode-pass {
+    /* font-size: medium; */
     margin-bottom: 5%;
 }
 
@@ -83,7 +87,6 @@
     background-position: 0 0;
     background-color: #222;
 }
-
 /* red shimmer */
 /* .shimmer {
     text-align: center;
@@ -110,39 +113,35 @@
     background-position: 0 0;
     background-color: #222;
 } */
-
 @-moz-keyframes shimmer {
     0% {
-            background-position: top left;
+        background-position: top left;
     }
     100% {
-            background-position: top right;
+        background-position: top right;
     }
 }
-
 @-webkit-keyframes shimmer {
     0% {
-            background-position: top left;
+        background-position: top left;
     }
     100% {
-            background-position: top right;
+        background-position: top right;
     }
 }
-
 @-o-keyframes shimmer {
     0% {
-            background-position: top left;
+        background-position: top left;
     }
     100% {
-            background-position: top right;
+        background-position: top right;
     }
 }
-
 @keyframes shimmer {
     0% {
-            background-position: top left;
+        background-position: top left;
     }
     100% {
-            background-position: top right;
+        background-position: top right;
     }
 }

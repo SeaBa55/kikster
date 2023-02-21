@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
+import { motion } from "framer-motion";
 import './style.css';
 
 const LoginPortal = (ref) => {
@@ -8,59 +9,53 @@ const LoginPortal = (ref) => {
         myRef.current.classList.add('animate-border');
     },[]);
 
-    const myRef2 = useRef(null);
-
-    useEffect(() => {
-        myRef2.current.classList.add('door-open');
-    },[]);
-
     return (
         <>
-            {/* <div className="login">
-                <div className="svg-wrapper">
-                    <svg height="300" width="320" xmlns="http://www.w3.org/2000/svg">
-                        <rect ref={myRef} className="shape" height="300" width="320"/>
-                        <div className="text">ZACH SAUCIER</div>
-                    </svg>
-                </div>
-            </div> */}
-
             <div className="back-drop"/>
             <div className="login-wrapper">
-                {/* <div className="login">
-                </div> */}
                 <div className="svg-wrapper">
-                    <div className="back-door">
-                        <form>
-                            <label htmlFor="fname">First name:</label>
-                            <br/>
-                            <input type="text" id="fname" name="fname"/>
-                            <br/>
-                            <label htmlFor="lname">Last name:</label>
-                            <br/>
-                            <input type="text" id="lname" name="lname"/>
-                        </form>
-                        <div ref={myRef2} className="door">
-                        </div>
-                    </div>
                     <svg height="300" width="320" >
                         <rect ref={myRef} className="shape" height="300" width="320"/>
                     </svg>
-                    <div className="text2">
+                    <motion.div
+                        className="text2"
+                        initial={{ 
+                            y: -100, 
+                            scale: 0.9, 
+                            opacity: 0.0,
+                        }}
+                        animate={{
+                            y: 0, 
+                            scale: 1, 
+                            opacity: 1.0,
+                        }}
+                        transition={{
+                            opacity: { 
+                                ease: "linear",
+                                duration: 1
+                            },
+                            duration: 0.1,
+                            type: 'spring',
+                            damping: 10,
+                            delay: 1.6
+                        }}
+                    >
+                        <div className='admin-mode-label shimmer'>
+                            ADMIN MODE
+                        </div>
                         <form>
-                            <label htmlFor="user">user name</label>
-                            <br/>
-                            <input type="text" id="user" name="user"/>
-                            <br/>
-                            <label htmlFor="pass">password</label>
-                            <br/>
-                            <input type="text" id="pass" name="pass"/>
+                            <div className='admin-mode-user'>
+                                <label htmlFor="user">username</label>
+                                <input type="text" id="user" name="user"/>
+                            </div>
+                            <div className='admin-mode-pass'>
+                                <label htmlFor="pass">password</label>
+                                <input type="password" id="pass" name="pass"/>
+                            </div>
                         </form>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
-
-
         </>
     );
 }

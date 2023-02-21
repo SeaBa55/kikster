@@ -1,82 +1,16 @@
-/* .login {
-    position: fixed;
-    z-index: 11;
-    top: 30%;
-    left: 40.7%;
-    margin: 0;
-}
-
-.svg-wrapper {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    margin: 0 auto;
-    width: 320px; 
-}
-.shape {
-    stroke-dasharray:  0 1260;
-    stroke-dashoffset: 1260;
-    stroke-width: 5px;
-    fill: transparent;
-    stroke: #19f6e8;
-    border-radius: 20px;
-    transition:
-        stroke-width 1s, 
-        stroke-dashoffset 2s, 
-        stroke-dasharray 2s, 
-        stroke 2s;
-}
-.animate-border {
-    stroke-width: 2px;
-    stroke-dashoffset: 0;
-    stroke-dasharray: 1260;
-    stroke: white;
-} */
-
-/* .back-drop {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background-color: black;
-    color: white;
-    opacity: 50%;
-    z-index: 10;
-    top: 7%
-}
-.login-wrapper {
-    position: sticky;
-    height: 0px;
-    z-index: 11;
-    top: 30%;
-}
-.test {
-    height: 20px;
-    width: 20px;
-    background-color: red;
-}
-.login {
-    display: flex;
-    justify-content: center;
-    width: 100px;
-    height: 100px;
-    background-color: blue;
-    
-}; */
-
 .back-drop {
     position: fixed;
     width: 100vw;
     height: 100vh;
     background-color: black;
     color: white;
-    opacity: 50%;
+    opacity: 70%;
     z-index: 10;
     top: 0%;
 }
 .svg-wrapper {
     position: relative;
     top: 50%;
-    transform: translateY(-50%);
     margin: 0 auto;
     width: 320px; 
 }
@@ -98,8 +32,8 @@
     font-size: 22px;
     line-height: 32px;
     letter-spacing: 8px;
-    color: #19f6e8;
-    top: -180px;
+    color: white;
+    top: -265px;
     position: relative;
 }
 .animate-border {
@@ -114,38 +48,101 @@
     z-index: 11;
     top: 30%;
 }
-.back-door {
-    border-style: solid;
-    border: 5px;
-    border-color: green;
-    background-color: #333;
-    position:relative;
-    width:200px;
-    height:300px;
-    margin: 0 auto;
-    margin-top:50px;
+.admin-mode-label {
+    /* font-family: "lobster"; */
+    /* color: orangered; */
+    margin-bottom: 15%;
 }
-.door {
-    border-style: solid;
-    border: 5px;
-    border-color: black;
-    background-color:brown;
-    position:absolute;
-    top:0px;
-    left:0px;
-    width:200px;
-    height:300px;
-    transform-origin: left;
-    /* Speed of the Door animation */
-    transition: all 0.5s ease-in-out;
+.admin-mode-user {
+    margin-bottom: 5%;
 }
-.door-open {
-    /* prespectiv creates the door open effect */
-    background-color: grey;
-    transform: 
-        perspective(1200px) 
-        translateZ(0px) 
-        translateX(0px) 
-        translateY(0px) 
-        rotateY(-105deg);
+
+/* blue shimmer */
+.shimmer {
+    text-align: center;
+    color: #19f6e7ad;
+    background: -webkit-gradient(linear, left top, right top, from(red), to(red), color-stop(0.4, #fff));
+    background: -moz-gradient(linear, left top, right top, from(red), to(red), color-stop(0.4, #fff));
+    background: gradient(linear, left top, right top, from(red), to(red), color-stop(0.4, #fff));
+    -webkit-background-size: 50px 110%;
+    -moz-background-size: 50px 110%;
+    background-size: 50px 110%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-animation-name: shimmer;
+    -moz-animation-name: shimmer;
+    animation-name: shimmer;
+    -webkit-animation-duration: 2s;
+    -moz-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-color: #222;
+}
+
+/* red shimmer */
+/* .shimmer {
+    text-align: center;
+    color: rgba(255, 68, 0, 0.7);
+    background: -webkit-gradient(linear, left top, right top, from(red), to(red), color-stop(0.4, #fff));
+    background: -moz-gradient(linear, left top, right top, from(red), to(red), color-stop(0.4, #fff));
+    background: gradient(linear, left top, right top, from(red), to(red), color-stop(0.4, #fff));
+    -webkit-background-size: 50px 110%;
+    -moz-background-size: 50px 110%;
+    background-size: 50px 110%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-animation-name: shimmer;
+    -moz-animation-name: shimmer;
+    animation-name: shimmer;
+    -webkit-animation-duration: 2s;
+    -moz-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-color: #222;
+} */
+
+@-moz-keyframes shimmer {
+    0% {
+            background-position: top left;
+    }
+    100% {
+            background-position: top right;
+    }
+}
+
+@-webkit-keyframes shimmer {
+    0% {
+            background-position: top left;
+    }
+    100% {
+            background-position: top right;
+    }
+}
+
+@-o-keyframes shimmer {
+    0% {
+            background-position: top left;
+    }
+    100% {
+            background-position: top right;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+            background-position: top left;
+    }
+    100% {
+            background-position: top right;
+    }
 }

@@ -3,19 +3,26 @@ import { motion } from "framer-motion";
 import './style.css';
 
 const LoginPortal = (ref) => {
-    const myRef = useRef(null);
+    const svgRef = useRef(null);
+    const userRef = useRef(null);
+    const passRef = useRef(null);
 
     useEffect(() => {
-        myRef.current.classList.add('animate-border');
+        svgRef.current.classList.add('animate-border');
     },[]);
 
+    const login = () => {
+        const username = userRef.current.value;
+        const password = passRef.current.value;
+        console.log(username, password);
+    }
     return (
         <>
             <div className="back-drop" id="back-drop"/>
             <div className="login-wrapper">
                 <div className="svg-wrapper">
                     <svg height="300" width="320" >
-                        <rect ref={myRef} className="shape" height="300" width="320"/>
+                        <rect ref={svgRef} className="shape" height="300" width="320"/>
                     </svg>
                     <motion.div
                         className="text2"
@@ -44,14 +51,19 @@ const LoginPortal = (ref) => {
                         <form>
                             <div className='admin-mode-user'>
                                 <label htmlFor="user">username</label>
-                                <input type="text" id="user" name="user"/>
+                                <input ref={userRef} type="text" id="user" name="user"/>
                             </div>
                             <div className='admin-mode-pass'>
                                 <label htmlFor="pass">password</label>
-                                <input type="password" id="pass" name="pass"/>
+                                <input ref={passRef} type="password" id="pass" name="pass"/>
                             </div>
                             <div className='admin-mode-submit'>
-                                <input class="btn btn-outline-light" type="submit" value="Submit"></input>
+                                <input 
+                                    class="btn btn-outline-light" 
+                                    type="button" 
+                                    value="Submit" 
+                                    onClick={() => login()}
+                                />
                             </div>
                         </form>
                     </motion.div>

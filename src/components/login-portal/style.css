@@ -5,7 +5,7 @@
     background-color: black;
     color: white;
     opacity: 90%;
-    z-index: 10;
+    z-index: 12;
     top: 0%;
 }
 .svg-wrapper {
@@ -45,7 +45,7 @@
 .login-wrapper {
     position: sticky;
     height: 0px;
-    z-index: 11;
+    z-index: 13;
     top: 30%;
 }
 .admin-mode-label {

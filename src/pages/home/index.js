@@ -91,6 +91,7 @@ const Home = () => {
             </div>
 
             <div className="container mt-3">
+                <h2>Cómo lo hacemos</h2>
                 <div className="row d-flex text-start">
                     <div className="mt-5 col-sm-12 col-md-12 col-lg-6 themed-grid-col">
                         <h3>{entityCards[0].type}</h3>
@@ -124,6 +125,34 @@ const Home = () => {
                         <li>Planificación interpretativa para el acercamiento al patrimonio natural y cultural desde la construcción colectiva.</li>
                         <li>Elaboración de protocolos de uso, protocolos de seguridad turística y bioseguridad.</li>
                         <li>Diseño de modelos de operación desde la gobernanza con administración sustentable, eficiente y sostenible.</li>
+                    </ul>                
+                </div>
+
+                <div className="row d-flex my-3">
+                    <h2>Por qué estamos aquí</h2>
+                    <p className="mx-5 col-md-5 text-start">Nuestra misión es proveer herramientas para la gestión adecuada de distintos escenarios y el acompañamiento para su implementación, mediante el diseño y puesta en marcha  de un modelo de operación hecho a la medida.</p>               
+                </div>
+
+                <div className="row d-flex my-3">
+                    <h2>Hacia dónde vamos </h2>
+                    <p className="mx-5 col-md-5 text-start"> Tenemos la visión de desarrollar proyectos líderes a nivel nacional y referentes internacionales en la planificación, gestión e implementación de modelos de operación para proyectos de turismo sostenibles.</p>                
+                </div>
+
+                <div className="row d-flex my-3">
+                    <h2>Nuestra gente </h2>
+                    <p className="mx-5 col-md-5 text-start">Contamos con un equipo humano técnico y especializado, cuya trayectoria se ofrece al servicio de las poblaciones cercanas de los espacios para la conformación de equipos de trabajo territoriales como alternativa económica y para el fortalecimiento turístico de las áreas verdes en entornos urbanos.</p>                
+                </div>
+
+                <div className="row d-flex my-3">
+                    <h2>Áreas de Trabajo </h2>
+                    <ul className="mx-5 col-md-5 text-start">
+                        <li>Gestión integral de proyectos.</li>
+                        <li>Fortalecimiento para la gestión.</li>
+                        <li>Planificación de escenarios.</li>
+                        <li>Generación de planes de capacitación.</li>
+                        <li>Fomento a los emprendimientos.</li>
+                        <li>Suministro de herramientas de trabajo colaborativo.</li>
+                        <li>Apoyo en la estructuración de proyectos para la sostenibilidad.</li>
                     </ul>                
                 </div>
             </div>

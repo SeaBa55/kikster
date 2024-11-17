@@ -22,46 +22,46 @@ const Footer = () => {
         <footer className="footer bg-dark pt-3">
                 <div className="d-flex row justify-content-center">
                     <p className="fw-bold ">Contáctanos</p>
-                        <Col xl={5}>
+                        <Col md={5}>
                     <Row className="justify-content-center">
-                            <p style={{
-                                textAlign: 'start',
-                                padding: 0,
-                            }}>
-                                Si tu comunidad desarrolla proyectos de turismo rural comunitario en destinos de naturaleza y quieres articular su modelo operativo de manera funcional y sostenible, te podemos ayudar.
-                            </p>
+                        <p style={{
+                            textAlign: 'start',
+                            // padding: 0,
+                        }}>
+                            Si tu comunidad desarrolla proyectos de turismo rural comunitario en destinos de naturaleza y quieres articular su modelo operativo de manera funcional y sostenible, te podemos ayudar.
+                        </p>
                     </Row>
                     <Row className="justify-content-center">
-                        <Col xl={4}>
+                        <Col md={4}>
                             <Row className="justify-content-start"> 
-                                <Col xl={1} className="p-0">
+                                <Col md={2} className="p-0">
                                     <FontAwesomeIcon className='fa-fw' icon={faPhone} />
                                 </Col>
-                                <Col xl={6} className="p-0">
+                                <Col md={7} className="p-0">
                                     <p>
-                                        +57 318 3593342
+                                        (+57) 318 3593342
                                     </p>
                                 </Col>
                             </Row>
                         </Col>
-                        <Col xl={4}>
+                        <Col md={4}>
                             <Row className="justify-content-center">
-                                <Col xl={1} className="p-0">
+                                <Col md={2} className="p-0">
                                     <FontAwesomeIcon className='fa-fw' icon={faLocationDot} />
                                 </Col>
-                                <Col xl={10} className="p-0">
+                                <Col md={10} className="p-0">
                                     <p>
                                         Cra. 4 # 59-21 | Bogotá - Col.
                                     </p>
                                 </Col>
                             </Row>
                         </Col>
-                        <Col xl={4}>
+                        <Col md={4}>
                             <Row className="justify-content-end">
-                                <Col xl={1} className="p-0">
+                                <Col md={2} className="p-0">
                                     <FontAwesomeIcon className='fa-fw' icon={faPaperPlane} />
                                 </Col>
-                                <Col xl={6} className="p-0">
+                                <Col md={7} className="p-0">
                                     <p>
                                         hello@kikster.live
                                     </p>

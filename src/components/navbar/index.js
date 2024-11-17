@@ -54,7 +54,7 @@ const NavBar = () => {
                             className= "text-decoration-none"
                             onClick={collapsNav}
                         >
-                            About Us
+                            Sobre Nosotros
                         </NavLink>
                     </Nav.Link>
                     <Nav.Link as="div">
@@ -64,7 +64,7 @@ const NavBar = () => {
                             className="text-decoration-none"
                             onClick={collapsNav}
                         >
-                            Portfolio
+                            Portafolio
                         </NavLink>
                     </Nav.Link>
                     {/* <Nav.Link as="div">

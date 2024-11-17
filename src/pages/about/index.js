@@ -14,11 +14,10 @@ const About = () => {
             <div className="row d-flex text-start">
 
                 <div className="col-sm-12 col-md-12 col-lg-7 themed-grid-col">
-
                     <h2 className="py-3">Historia</h2>
-                    <p>Kikster SAS fue creado en el año 2014 para el desarrollo de soluciones tecnológicas en materia de consultoría en planeación y estrategia web, marketing, dirección de campañas publicitarias, creación y producción audiovisual.</p>
-                    <p>Hacia el año 2017 inicia una etapa de transformación orientando su enfoque creativo al sector del turismo especialmente en escenarios de naturaleza. A partir de este momento, empieza a generar acciones concretas en la operación de senderos naturales en la búsqueda permanente de la articulación entre la institucionalidad y los liderazgos de interpretación local que por años han protegido los lugares, haciendo recorridos responsables y protegiendo las zonas de conservación desde una mirada ambiental, social y económica realiza acompañamiento a la planificación ecoturística de emprendimientos sostenibles</p>
-                    <p>Hen la actualidad se orienta a promover la interacción para el desarrollo de las comunidades territoriales fomentando valores de respeto, unidad, trabajo colectivo y equidad.</p>
+                    <p>Kikster SAS fue creada en el año 2014 para el desarrollo de soluciones tecnológicas en materia de consultoría en planeación y estrategia web, marketing, dirección de campañas publicitarias, creación y producción audiovisual.</p>
+                    <p>Hacia el año 2017 inicia una etapa de transformación orientando su enfoque creativo al sector del turismo, especialmente en escenarios de naturaleza. A partir de este momento, empieza a generar acciones concretas en la operación de senderos naturales en la búsqueda permanente de la articulación entre la institucionalidad y los liderazgos de interpretación local que por años han protegido los lugares, haciendo recorridos responsables y protegiendo las zonas de conservación desde una mirada ambiental, social y económica realiza acompañamiento a la planificación ecoturística de emprendimientos sostenibles.</p>
+                    <p>En la actualidad se orienta en el desarrollo de un turismo sostenible, que promueva el desarrollo socio económico de los territorios fomentando valores de respeto, unidad, trabajo colectivo y equidad.</p>
                 </div>
                     <div className="col-sm-12 col-md-12 col-lg-5 themed-grid-col">
                     <Card.Img
@@ -41,9 +40,14 @@ const About = () => {
             <div className="row d-flex text-start justify-content-center">
                     <div className="py-5 px-3 col-md-10 col-12">
                         <h2 className="py-3">Nos inspira</h2>
-                        <p className="pb-3">El principio universal de derechos humanos por la libertad, la justicia y la paz: <span className="fw-bold fst-italic">“todas las personas somos iguales ante cualquier condición” </span> y el objetivo de desarrollo sostenible adoptado por Naciones Unidas <span className="fw-bold fst-italic">“Ciudades y comunidades sostenibles,”</span> como el marco fundamental para desarrollar acciones colectivas de formación personal y profesional para el desarrollo humano que impacten positivamente a la naturaleza.
+                        {/* <p className="pb-3">El principio universal de derechos humanos por la libertad, la justicia y la paz: <span className="fw-bold fst-italic">“todas las personas somos iguales ante cualquier condición” </span> y el objetivo de desarrollo sostenible adoptado por Naciones Unidas <span className="fw-bold fst-italic">“Ciudades y comunidades sostenibles,”</span> como el marco fundamental para desarrollar acciones colectivas de formación personal y profesional para el desarrollo humano que impacten positivamente a la naturaleza.
                         </p>
-                        <p className="mb-5 pb-3">Nos articulamos con las políticas públicas para dinamizar el turismo sostenible, promover la reactivación económica y, con ello, estimular la consolidación de emprendimientos comunitarios y rurales desde la gobernanza.</p>
+                        <p className="mb-5 pb-3">Nos articulamos con las políticas públicas para dinamizar el turismo sostenible, promover la reactivación económica y, con ello, estimular la consolidación de emprendimientos comunitarios y rurales desde la gobernanza.</p> */}
+                        
+                        <p>
+                            Trabajamos por un turismo sostenible, promoviendo el desarrollo socio económico, basados en la conservación y la valoración del patrimonio cultural y ambiental de nuestro de Colombia y nuestra región.
+                        </p>
+                        
                     </div>
                 </div>
             </div>

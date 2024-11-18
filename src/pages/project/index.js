@@ -193,7 +193,7 @@ const Project = () => {
               className="rounded-0"
               style={{
                 height: "600px",
-                width: "400px",
+                width: "535px",
                 padding: "12px",
                 objectFit: "cover",
               }}

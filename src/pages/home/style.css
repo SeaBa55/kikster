@@ -117,3 +117,7 @@
   /* margin: auto; */
   /* transition: transform 0.7s linear; */
 }
+
+body {
+  overflow-x: hidden;
+}

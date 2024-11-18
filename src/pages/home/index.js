@@ -6,10 +6,13 @@ import {
     images,
     portfolioImages,
     homeIcons,
-    jumbotron
+    jumbotron,
+    logos,
 }  from "../../images";
 import './style.css';
 import { AnimatePresence, motion } from "framer-motion";
+
+const { nature, products } = logos;
 
 const Home = () => {
     const baseURL = process.env.PUBLIC_URL; 
@@ -87,6 +90,15 @@ const Home = () => {
                     <p className="text-start">Kikster es la columna vertebral de la plataforma de operación que gestiona 2 unidades de negocio, bajo el firme cometido de contribuir a la sostenibilidad ambiental, social y turística de nuestro país, la región y sus distintos grupos de interés.</p>
     
                     {/* add link to learn more and redirect to the about page */}
+
+                    <Row>
+                        <Col>
+                            <img src={nature.url} alt={nature.title}/>
+                        </Col>
+                        <Col>
+                            <img src={products.url} alt={products.title}/>
+                        </Col>
+                    </Row>
                 </div>
             </div>
 

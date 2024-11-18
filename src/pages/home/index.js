@@ -6,11 +6,12 @@ import {
     images,
     portfolioImages,
     homeIcons,
-    jumbotron
+    homeImages,
 }  from "../../images";
 import './style.css';
 import { AnimatePresence, motion } from "framer-motion";
 
+const { jumbotron, background1, foreground1} = homeImages;
 const Home = () => {
     const baseURL = process.env.PUBLIC_URL; 
     const [currAngle, setCurrAngle] = useState(0);
@@ -23,6 +24,8 @@ const Home = () => {
 
     return (
         <>
+            {/* <div className="wrapper">
+                <header> */}
             <Card className="shadow-gradient card-alt">
                 <Card.Img
                     src={jumbotron[0].url}
@@ -80,16 +83,41 @@ const Home = () => {
                     <ImageSlider slides={portfolio}/>
                 </div>
             </Card>
- 
-            <div className="container">
+            
+            <div className="wrapper">
+                <header>
+                    <img
+                        className="background"
+                        src={background1.url}
+                        alt={background1.title}
+                    />
+                    <img
+                        className="foreground"
+                        src={foreground1.url}
+                        alt={foreground1.title}
+                    />
+                    <div className="container testp">
+                        <div className="row d-flex">
+                            <h2 className="py-3">Quiénes Somos</h2>
+                            <p className="text-start">Kikster es la columna vertebral de la plataforma de operación que gestiona 2 unidades de negocio, bajo el firme cometido de contribuir a la sostenibilidad ambiental, social y turística de nuestro país, la región y sus distintos grupos de interés.</p>
+                        </div>
+                    </div>
+                </header>
+            </div>
+
+            {/* <div className="container">
                 <div className="row d-flex">
                     <h2 className="py-3">Quiénes Somos</h2>
                     <p className="text-start">Kikster es la columna vertebral de la plataforma de operación que gestiona 2 unidades de negocio, bajo el firme cometido de contribuir a la sostenibilidad ambiental, social y turística de nuestro país, la región y sus distintos grupos de interés.</p>
     
-                    {/* add link to learn more and redirect to the about page */}
+                    add link to learn more and redirect to the about page
                 </div>
-            </div>
-
+            </div> */}
+            {/* <div className="container">
+                <div className="row d-flex">
+                    <image alt={'test'} style={{ width: '1000px', objectFit: 'cover' }} src={background1.url}/>
+                </div>
+            </div> */}
             <div className="container mt-3">
                 <h2>Cómo lo hacemos</h2>
                 <div className="row d-flex text-start">

@@ -42,6 +42,18 @@ const jumbotron = [
     }
 ];
 
+const homeImages = {
+    jumbotron,
+    background1: {
+        title: "test",
+        url: `${baseURL}/images/Trayectoria_Red_de_Miradores_de_Flora_y_Fauna_de_Nariño_2.JPG`
+    },
+    foreground1: {
+        title: "foreground-1",
+        url: `${baseURL}/images/IMG_7316_foreground.png`,
+    }
+}
+
 const portfolioImages = [
     {
         title:"kite-surf",
@@ -102,4 +114,4 @@ const homeIcons = {
     nat: `${baseURL}/icons/pines-tree-svgrepo-com.svg`
 }
 
-export { images, jumbotron, portfolioImages, projectImages, aboutImages, homeIcons };
+export { images, homeImages, portfolioImages, projectImages, aboutImages, homeIcons };

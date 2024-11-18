@@ -117,3 +117,45 @@
   /* margin: auto; */
   /* transition: transform 0.7s linear; */
 }
+
+.wrapper {
+  height: 150vh;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 10px;
+}
+
+header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  transform-style: preserve-3d;
+  z-index: -1;
+}
+
+.background {
+  height: 100%;
+  /* width: 100%; */
+  transform: translateZ(-10px) scale(2);
+}
+.foreground {
+  height: 100%;
+  width: 100%;
+  transform: translateZ(-0px) scale(1);
+  top: 0%;
+}
+
+.background,
+.foreground {
+  position: absolute;
+  object-fit: cover;
+  z-index: -1;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}

@@ -6,6 +6,7 @@ import {
     images,
     portfolioImages,
     homeIcons,
+    homeImages,
     jumbotron
 }  from "../../images";
 import './style.css';
@@ -13,6 +14,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const Home = () => {
     const baseURL = process.env.PUBLIC_URL; 
+    console.log(baseURL);
     const [currAngle, setCurrAngle] = useState(0);
     const [currIndex, setCurrIndex] = useState(0);
 
@@ -91,6 +93,15 @@ const Home = () => {
             </div>
 
             <div className="container mt-3">
+                <img
+                    src={homeImages[0].url}
+                    style= {{
+                        width:"1000px",
+                        height: "500px",
+                        margin: "0 auto"
+                    }}
+                    alt="Como_lo_hacemos"
+                />
                 <h2>Cómo lo hacemos</h2>
                 <div className="row d-flex text-start">
                     <div className="mt-5 col-sm-12 col-md-12 col-lg-6 themed-grid-col">
@@ -129,21 +140,67 @@ const Home = () => {
                 </div>
 
                 <div className="row d-flex my-3">
+                    <img
+                        src={homeImages[1].url}
+                        style= {{
+                            width:"1000px",
+                            height: "500px",
+                            margin: "0 auto"
+                        }}
+                        alt="Como_lo_hacemos"
+                    />
                     <h2>Por qué estamos aquí</h2>
                     <p className="mx-5 col-md-5 text-start">Nuestra misión es proveer herramientas para la gestión adecuada de distintos escenarios y el acompañamiento para su implementación, mediante el diseño y puesta en marcha  de un modelo de operación hecho a la medida.</p>               
                 </div>
 
                 <div className="row d-flex my-3">
+                    <img
+                        src={homeImages[2].url}
+                        style={{
+                            width: "600px", // Adjust to desired width
+                            height: "500px", // Adjust to desired height
+                            marginLeft: "50px", // Adds gap between images
+                        }}
+                        alt="Como_lo_hacemos"
+                    />
+                    
+                    <img
+                        src={homeImages[3].url}
+                        style={{
+                            width: "600px", 
+                            height: "500px", 
+                            marginLeft: "20px", // Adds gap between images
+                        }}
+                        alt="Como_lo_hacemos"
+                    />
                     <h2>Hacia dónde vamos </h2>
                     <p className="mx-5 col-md-5 text-start"> Tenemos la visión de desarrollar proyectos líderes a nivel nacional y referentes internacionales en la planificación, gestión e implementación de modelos de operación para proyectos de turismo sostenibles.</p>                
                 </div>
 
                 <div className="row d-flex my-3">
+                    <img
+                        src={homeImages[4].url}
+                        style= {{
+                            width:"1000px",
+                            height: "500px",
+                            margin: "0 auto"
+                        }}
+                        alt="Como_lo_hacemos"
+                    />
                     <h2>Nuestra gente </h2>
                     <p className="mx-5 col-md-5 text-start">Contamos con un equipo humano técnico y especializado, cuya trayectoria se ofrece al servicio de las poblaciones cercanas de los espacios para la conformación de equipos de trabajo territoriales como alternativa económica y para el fortalecimiento turístico de las áreas verdes en entornos urbanos.</p>                
                 </div>
 
                 <div className="row d-flex my-3">
+                    <img
+                        src={homeImages[5].url}
+                        style= {{
+                            width:"1000px",
+                            height: "500px",
+                            margin: "0 auto"
+                        }}
+                        alt="Como_lo_hacemos"
+                    />
                     <h2>Áreas de Trabajo </h2>
                     <ul className="mx-5 col-md-5 text-start">
                         <li>Gestión integral de proyectos.</li>

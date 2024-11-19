@@ -108,6 +108,78 @@ const portfolio = [
         area: "24,000 sq. ft.",
         date: "Año 2022",
         budget: "570,000"
+    },
+    {
+        id: "Ruta del Barniz de Pasto Mopa-Mopa",
+        title: "Ruta del Barniz de Pasto Mopa-Mopa | Nariño",
+        primary_img: `${baseURL}/images/Mapa_Tres_Rutas_del_Barniz_2.jpg`,
+        carousel_img: `${baseURL}/images/Mapa_Tres_Rutas_del_Barniz_2.jpg`,
+        secondary_img: `${baseURL}/images/Mapa_Tres_Rutas_del_Barniz.jpg`,
+        location: "Nariño",
+        desciption: "Fortalecimiento de los Maestros Artesanos del Barniz de Pasto - Mopa Mopa, mediante el diseño y puesta en marcha de la experiencia turística en el marco de la ejecución del Proyecto de Desarrollo Territorial en Condiciones de Paz. Diseño de portafolio, mapa y otros materiales POP. PDT Nariño y Secretaría de Cultura de la Alcaldía de Pasto.",
+        area: "24,000 sq. ft.",
+        date: "Año 2023",
+        budget: "570,000"
+    },
+    {
+        id: "Plan Maestro Turismo Cafetero Cañón del Juanambú Buesaco",
+        title: "Plan Maestro Turismo Cafetero Cañón del Juanambú Buesaco | Nariño",
+        primary_img: `${baseURL}/images/Plan Maestro Turismo Cafetero Cañón del Juanambú Buesaco.jpg`,
+        carousel_img: `${baseURL}/images/Plan Maestro Turismo Cafetero Cañón del Juanambú Buesaco_3.jpg`,
+        secondary_img: `${baseURL}/images/Plan Maestro Turismo Cafetero Cañón del Juanambú Buesaco_2.jpg`,
+        location: "Nariño",
+        desciption: "Formulación del plan maestro para viabilizar el desarrollo del turismo cafetero en el Cañón del Juanambú. Diseño arquitectónico del Centro de Experiencia del Café Especial de Nariño. En consorcio con Aurica. Instituto Global para el Crecimiento Verde – GGGI – Reino de Noruega – Comfamiliar Nariño.",
+        area: "24,000 sq. ft.",
+        date: "Año 2023",
+        budget: "570,000"
+    },
+    {
+        id: "Parque La Sauceda Hermosillo",
+        title: "Parque La Sauceda Hermosillo | Estado de Sonora México",
+        primary_img: `${baseURL}/images/Parque La Sauceda Hermosillo.jpg`,
+        carousel_img: `${baseURL}/images/Parque La Sauceda Hermosillo_3.jpg`,
+        secondary_img: `${baseURL}/images/Parque La Sauceda Hermosillo_2.jpg`,
+        location: "Sonora",
+        desciption: "Formulación del estudio de operación sostenible para el proyecto de renovación del Parque La Sauceda.  Secretaría de Infraestructura y Desarrollo Urbano del Estado de Sonora – Arimeci Consultoría – Tezontle Arquitectos.",
+        area: "24,000 sq. ft.",
+        date: "Año 2023",
+        budget: "570,000"
+    },
+    {
+        id: "Productividad Verde",
+        title: "Productividad Verde | Tolima - Bolívar - Boyacá",
+        primary_img: `${baseURL}/images/Productividad Verde.jpeg`,
+        carousel_img: `${baseURL}/images/Productividad Verde.jpeg`,
+        secondary_img: `${baseURL}/images/Productividad Verde.jpeg`,
+        location: "Boyacá",
+        desciption: "Acompañamiento en el componente de asistencia técnica para mejorar la productividad y competitividad de las empresas (prestadores  de servicios turísticos), buscando el fortalecimiento desde la promoción de acciones que aumenten la capacidad del sector industrial en adaptación y mitigación al cambio climático y bioeconomía. Ibagué, Cartagena y Sogamoso. Consorcio Idom Ecosimple - Colombia Productiva.",
+        area: "24,000 sq. ft.",
+        date: "Año 2023",
+        budget: "570,000"
+    },
+    {
+        id: "Parque Aventura La Chorrera",
+        title: "Parque Aventura La Chorrera | Choachí - Cundinamarca",
+        primary_img: `${baseURL}/images/Parque Aventura La Chorrera_3.jpg`,
+        carousel_img: `${baseURL}/images/Parque Aventura La Chorrera.jpg`,
+        secondary_img: `${baseURL}/images/Parque Aventura La Chorrera_2.jpg`,
+        location: "Cundinamarca",
+        desciption: "Realizar el Estudio de Capacidad de Carga del sendero del Parque Aventura La Chorrera, con el fin de promover el desarrollo ecoturístico en la zona y mejorar las condiciones que contribuyan a alcanzar un mejor manejo de este escenario natural con un alto reconocimiento a nivel nacional. Parque Aventura La Chorrera SAS.",
+        area: "24,000 sq. ft.",
+        date: "Año 2024",
+        budget: "570,000"
+    },
+    {
+        id: "Habitación de Hotel",
+        title: "Habitación de Hotel | Economía Circular",
+        primary_img: `${baseURL}/images/Habitación de Hotel_3.jpg`,
+        carousel_img: `${baseURL}/images/Habitación de Hotel.jpg`,
+        secondary_img: `${baseURL}/images/Habitación de Hotel_2.jpg`,
+        location: "Nacional",
+        desciption: "Desarrollar e implementar un concepto para el diseño de habitaciones de hotel según criterios circulares. GIZ - Cooperación Alemana para el Desarrollo en Colombia | ProUSAR. En consorcio con Waste To Worth LATAM. En desarrolloDesarrollar e implementar un concepto para el diseño de habitaciones de hotel según criterios circulares. GIZ - Cooperación Alemana para el Desarrollo en Colombia | ProUSAR. En consorcio con Waste To Worth LATAM. En desarrolloDesarrollar e implementar un concepto para el diseño de habitaciones de hotel según criterios circulares. GIZ - Cooperación Alemana para el Desarrollo en Colombia | ProUSAR. En consorcio con Waste To Worth LATAM. En desarrollo",
+        area: "24,000 sq. ft.",
+        date: "Año 2024",
+        budget: "570,000"
     }
 ];
 

@@ -107,10 +107,11 @@ const Home = () => {
             <div className="container mt-3">
                 <img
                     src={homeImages[0].url}
-                    style= {{
-                        width:"1000px",
+                    style={{
+                        width: "983px",
                         height: "500px",
-                        margin: "0 auto"
+                        margin: "0 auto",
+                        marginLeft: "-23px", 
                     }}
                     alt="Como_lo_hacemos"
                 />

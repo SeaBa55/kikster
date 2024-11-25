@@ -20,10 +20,17 @@ const Home = () => {
     console.log(baseURL);
     const [currAngle, setCurrAngle] = useState(0);
     const [currIndex, setCurrIndex] = useState(0);
+    const [qsSelection, setQsSelection] = useState("nature");
 
     const rotate = () => {
         setCurrAngle(currAngle + 120);
         setCurrIndex(currIndex === 2 ? 0 : currIndex + 1)
+    }
+
+    const handleQsClick = (selection) => {
+        if ( qsSelection !== selection) {
+            setQsSelection(selection);
+        }
     }
 
     return (
@@ -90,17 +97,178 @@ const Home = () => {
                 <div className="row d-flex">
                     <h2 className="py-3">Quiénes Somos</h2>
                     <p className="text-start">Kikster es la columna vertebral de la plataforma de operación que gestiona 2 unidades de negocio, bajo el firme cometido de contribuir a la sostenibilidad ambiental, social y turística de nuestro país, la región y sus distintos grupos de interés.</p>
-    
-                    {/* add link to learn more and redirect to the about page */}
 
-                    <Row>
+                    <Row className="mb-3">
                         <Col>
-                            <img src={nature.url} alt={nature.title}/>
+                            <Row>
+                                <Col>
+                                    <img
+                                        src={nature.url}
+                                        alt={nature.title}
+                                        onClick={() => handleQsClick('nature')}
+                                        style={{
+                                            cursor: 'pointer',
+
+                                        }}
+                                    />
+                                </Col>
+                            </Row>
+                            {qsSelection === 'nature' && <Row>
+                                <AnimatePresence initial="false" mode="popLayout">
+                                    <motion.div
+                                        initial={{ 
+                                            y: 0,
+                                        }}
+                                        animate={{ 
+                                            y: 10,
+                                        }}
+                                        exit={{ 
+                                            y: 0,
+                                        }}
+                                        transition={{
+                                            delay: 0.1,
+                                            type: 'spring',
+                                            // bounce: .5,
+                                            opacity: { 
+                                                ease: "linear",
+                                                duration: 1
+                                            }
+                                        }}
+                                    >
+                                        ⯆
+                                    </motion.div>
+                                </AnimatePresence>
+                            </Row>}
                         </Col>
                         <Col>
-                            <img src={products.url} alt={products.title}/>
+                            <Row>
+                                <Col>
+                                    <img
+                                        src={products.url}
+                                        alt={products.title}
+                                        onClick={() => handleQsClick('products')}
+                                        style={{
+                                            cursor: 'pointer'
+                                        }}
+                                    />
+                                </Col>
+                            </Row>
+                            {qsSelection === 'products' && <Row>
+                                <AnimatePresence initial="false" mode="popLayout">
+                                    <motion.div
+                                        initial={{ 
+                                            y: 0,
+                                        }}
+                                        animate={{ 
+                                            y: 10,
+                                        }}
+                                        exit={{ 
+                                            y: 0,
+                                        }}
+                                        transition={{
+                                            delay: 0.1,
+                                            type: 'spring',
+                                            // bounce: .5,
+                                            opacity: { 
+                                                ease: "linear",
+                                                duration: 1
+                                            }
+                                        }}
+                                    >
+                                        ⯆
+                                    </motion.div>
+                                </AnimatePresence>
+                            </Row>}
                         </Col>
                     </Row>
+                    
+                    <Container className="service-description">
+                        {qsSelection === 'nature' && <Row>
+                            <Col>
+                                <p> 
+                                    Kikster Nature es una firma de consultoría especializada en planificación y ordenamiento turístico, cuyo enfoque principal está definido por el trabajo con las comunidades y su efectiva conexión con las instituciones, en armonía con el manejo de los atractivos y distintos escenarios en condiciones de sostenibilidad.
+                                </p>
+                                <p>
+                                    Contamos con más de 7 años de experiencia en diferentes escenarios y atractivos de Colombia en Bogotá, y en los departamentos de Boyacá, Cundinamarca, La Guajira, Nariño y Tolima, así como estudios en el Estado de Sonora - México.
+                                </p>
+                                <section>
+                                    <h3>
+                                        Servicios
+                                    </h3>
+                                    <li>
+                                        Planes de gestión turística.
+                                    </li>
+                                    <li>
+                                        Planes de desarrollo turístico.
+                                    </li>
+                                    <li>
+                                        Formulación de proyectos para el sector turístico.
+                                    </li>
+                                    <li>
+                                        Diseños arquitectónicos.
+                                    </li>
+                                    <li>
+                                        Planes de sostenibilidad - Modelos de operación | flujos financieros + beneficios económicos.
+                                    </li>
+                                    <li>
+                                        Estudios de capacidad de carga para escenarios de naturaleza (senderos ecológicos, rondas hídricas, parques ecológicos, topografía de montaña).
+                                    </li>
+                                    <li>
+                                        Identificación y estrategias de mitigación de impactos ambientales.
+                                    </li>
+                                    <li>
+                                        Diseño de productos, rutas y paquetes turísticos.
+                                    </li>
+                                    <li>
+                                        Cartografía social.
+                                    </li>
+                                </section>
+                            </Col>
+                        </Row>}
+
+                        {qsSelection === 'products' && <Row>
+                            <Col>
+                                <p> 
+                                    Kikster Products se enfoca en la construcción de infraestructura para escenarios de naturaleza como senderos, reservas, parques, entre otros. La señalización es un elemento básico que contribuye a mejorar la ubicación y brinda un contexto en cualquier espacio que visitamos, de esta manera, se constituye en uno de los componentes definitivos para el ejercicio de la interpretación de un escenario. 
+                                </p>
+                                <p>
+                                    Nuestra propuesta se enmarca en un concepto de menor intervención en el escenario natural en armonía con la protección de los ecosistemas, el uso sostenible y la economía circular a través de la selección cuidadosa de fuentes, materiales duraderos y optimización de costos.
+                                </p>
+                                <section>
+                                    <h3>
+                                        Productos
+                                    </h3>
+                                    <li>
+                                        Portón
+                                    </li>
+                                    <li>
+                                        Mogadores: interpretativo, direccional o informativo.
+                                    </li>
+                                    <li>
+                                        Señales ancladas a árbol: interpretativa, direccional o informativa.
+                                    </li>
+                                    <li>
+                                        Letreros
+                                    </li>
+                                    <li>
+                                        Mesa
+                                    </li>
+                                    <li>
+                                        Deck
+                                    </li>
+                                    <li>
+                                        Banca
+                                    </li>
+                                    <li>
+                                        Diseño de productos, rutas y paquetes turísticos.
+                                    </li>
+                                    <li>
+                                        Cartografía social.
+                                    </li>
+                                </section>
+                            </Col>
+                        </Row>}
+                    </Container>
                 </div>
             </div>
 

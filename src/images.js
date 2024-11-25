@@ -110,6 +110,10 @@ const logos = {
     }
 }
 
+const homeImages = {
+    jumbotron,
+    background_1: `${baseURL}/images/Trayectoria_Red_de_Miradores_de_Flora_y_Fauna_de_Nariño_2.JPG`,
+}
 
 const homeIcons = {
     gov: `${baseURL}/icons/capitol-washington-svgrepo-com.svg`,
@@ -117,4 +121,4 @@ const homeIcons = {
     nat: `${baseURL}/icons/pines-tree-svgrepo-com.svg`
 }
 
-export { images, jumbotron, portfolioImages, projectImages, aboutImages, homeIcons, logos };
+export { images, jumbotron, portfolioImages, projectImages, aboutImages, homeImages, homeIcons, logos };

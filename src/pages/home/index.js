@@ -1,17 +1,19 @@
-import React, { useState } from "react";
-import ImageSlider from "../../components/image-slider"
+import React, { useState} from "react";
+import ImageSlider from "../../components/image-slider";
+import HorizontalScroll from "../../components/horizontal-scroll";
 import { Card, Col, Container, Row } from 'react-bootstrap';
+import { AnimatePresence, motion } from "framer-motion";
 import { portfolio }  from "../../portfolio";
 import {
     images,
     portfolioImages,
     homeIcons,
-    jumbotron,
+    homeImages,
     logos,
 }  from "../../images";
 import './style.css';
-import { AnimatePresence, motion } from "framer-motion";
 
+const { jumbotron, background_1 } = homeImages;
 const { nature, products } = logos;
 
 const Home = () => {
@@ -84,12 +86,12 @@ const Home = () => {
                 </div>
             </Card>
  
-            <div className="container">
+            {/* <div className="container">
                 <div className="row d-flex">
                     <h2 className="py-3">Quiénes Somos</h2>
                     <p className="text-start">Kikster es la columna vertebral de la plataforma de operación que gestiona 2 unidades de negocio, bajo el firme cometido de contribuir a la sostenibilidad ambiental, social y turística de nuestro país, la región y sus distintos grupos de interés.</p>
     
-                    {/* add link to learn more and redirect to the about page */}
+                    add link to learn more and redirect to the about page
 
                     <Row>
                         <Col>
@@ -100,7 +102,84 @@ const Home = () => {
                         </Col>
                     </Row>
                 </div>
-            </div>
+            </div> */}
+
+            <HorizontalScroll style={{ background: `url(${background_1})`, backgroundSize: 'cover' }}>
+                {/* First viewport content */}
+                <div 
+                    style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        minWidth: '100vw',
+                        height: '100vh',
+                    }}
+                >
+                    <div className="container">
+                        <div className="row d-flex">
+                            <h2 className="py-3 qs-title">Quiénes Somos</h2>
+                            <p className="text-start qs-text">
+                                Kikster es la columna vertebral de la plataforma de operación que gestiona 2
+                                unidades de negocio, bajo el firme cometido de contribuir a la sostenibilidad
+                                ambiental, social y turística de nuestro país, la región y sus distintos grupos de
+                                interés.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Second viewport content */}
+                <div 
+                    style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        minWidth: '100vw',
+                        height: '100vh' 
+                    }}
+                >
+                    <div className="container">
+                        <div className="row">
+                            <div className="glass-card">
+                                <Row>
+                                    <Col>
+                                        <img src={nature.url} alt={nature.title} />
+                                    </Col>
+                        
+                                    <Col className="qs-text">
+                                        Kikster Nature es una firma de consultoría especializada en planificación y ordenamiento turístico, cuyo enfoque principal está definido por el trabajo con las comunidades y su efectiva conexión con las instituciones, en armonía con el manejo de los atractivos y distintos escenarios en condiciones de sostenibilidad.
+
+                                        Contamos con más de 7 años de experiencia en diferentes escenarios y atractivos de Colombia en Bogotá, y en los departamentos de Boyacá, Cundinamarca, La Guajira, Nariño y Tolima, así como estudios en el Estado de Sonora - México.
+
+                                        Servicios
+
+                                        Planes de gestión turística.
+                                        Planes de desarrollo turístico.
+                                        Formulación de proyectos para el sector turístico.
+                                        Diseños arquitectónicos.
+                                        Planes de sostenibilidad - Modelos de operación | flujos financieros + beneficios económicos.
+                                        Estudios de capacidad de carga para escenarios de naturaleza (senderos ecológicos, rondas hídricas, parques ecológicos, topografía de montaña).
+                                        Identificación y estrategias de mitigación de impactos ambientales.
+                                        Diseño de productos, rutas y paquetes turísticos.
+                                        Cartografía social.
+
+                                    </Col>
+                                </Row>
+                        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Third viewport content */}
+                <div style={{ minWidth: '100vw', height: '100vh' }}>
+                    <div className="container">
+                        <div className="row">
+                            <Col>
+                                <img src={products.url} alt={products.title} style={{ width: '100%' }} />
+                            </Col>
+                        </div>
+                    </div>
+                </div>
+            </HorizontalScroll>
 
             <div className="container mt-3">
                 <h2>Cómo lo hacemos</h2>

@@ -276,10 +276,9 @@ const Home = () => {
                 <img
                     src={homeImages[0].url}
                     style={{
-                        width: "983px",
-                        height: "500px",
-                        margin: "0 auto",
-                        marginLeft: "-23px", 
+                        width: "70%",
+                        height: "auto",
+                        objectFit: "cover",
                     }}
                     alt="Como_lo_hacemos"
                 />
@@ -299,18 +298,18 @@ const Home = () => {
             </div>
 
             <div className="container mt-5">
-                <div className="row d-flex my-3">
+                <div className="my-3">
                     <h2>Para Quién lo Hacemos</h2>
-                    <ul className="mx-5 col-md-5 text-start">
+                    <ul className="col-12 col-md-5 text-start"> {/* Removed mx-5 */}
                         <li>Entidades territoriales: Gobernaciones, alcaldías, entidades de gobierno.</li>
                         <li>Operadores turísticos: agencias de viaje, operadores de destino, operadores turísticos, operadores de turismo comunitario, emprendimientos, y aquellos que apuntan a ser operadores.</li>
                         <li>Entidades de cooperación internacional.</li>
                     </ul>                
                 </div>
 
-                <div className="row d-flex my-3">
+                <div className="my-3">
                     <h2>Qué Más Podemos Hacer </h2>
-                    <ul className="mx-5 col-md-5 text-start">
+                    <ul className="col-12 col-md-5 text-start"> {/* Removed mx-5 */}
                         <li>Diseño de estrategias de fortalecimiento para iniciativas orientadas al diseño de productos turísticos.</li>
                         <li>Acompañamiento a emprendimientos basados en proyectos de ecoturismo.</li>
                         <li>Acompañamiento para el fortalecimiento de proyectos de turismo comunitario como alternativa de emprendimiento y desarrollo para los territorios.</li>
@@ -320,13 +319,13 @@ const Home = () => {
                     </ul>                
                 </div>
 
-                <div className="row d-flex my-3">
+                <div className="my-3">
                     <img
                         src={homeImages[1].url}
                         style= {{
-                            width:"1000px",
-                            height: "500px",
-                            margin: "0 auto"
+                            width: "70%",
+                            height: "auto",
+                            objectFit: "cover",
                         }}
                         alt="Como_lo_hacemos"
                     />
@@ -334,13 +333,13 @@ const Home = () => {
                     <p className="mx-5 col-md-5 text-start">Nuestra misión es proveer herramientas para la gestión adecuada de distintos escenarios y el acompañamiento para su implementación, mediante el diseño y puesta en marcha  de un modelo de operación hecho a la medida.</p>               
                 </div>
 
-                <div className="row d-flex my-3">
+                <div className="my-3">
                     <img
                         src={homeImages[2].url}
                         style={{
-                            width: "1000px", // Adjust to desired width
-                            height: "500px", // Adjust to desired height
-                            margin: "0 auto"
+                            width: "70%", // Adjust to desired width
+                            height: "auto", // Adjust to desired height
+                            objectFit: "cover"
                             // marginLeft: "50px", // Adds gap between images
                         }}
                         alt="Como_lo_hacemos"
@@ -349,13 +348,13 @@ const Home = () => {
                     <p className="mx-5 col-md-5 text-start"> Tenemos la visión de desarrollar proyectos líderes a nivel nacional y referentes internacionales en la planificación, gestión e implementación de modelos de operación para proyectos de turismo sostenibles.</p>                
                 </div>
 
-                <div className="row d-flex my-3">
+                <div className="my-3">
                     <img
                         src={homeImages[4].url}
                         style= {{
-                            width:"1000px",
-                            height: "500px",
-                            margin: "0 auto"
+                            width:"70%",
+                            height: "auto",
+                            objectFit: "cover"
                         }}
                         alt="Como_lo_hacemos"
                     />
@@ -363,13 +362,13 @@ const Home = () => {
                     <p className="mx-5 col-md-5 text-start">Contamos con un equipo humano técnico y especializado, cuya trayectoria se ofrece al servicio de las poblaciones cercanas de los espacios para la conformación de equipos de trabajo territoriales como alternativa económica y para el fortalecimiento turístico de las áreas verdes en entornos urbanos.</p>                
                 </div>
 
-                <div className="row d-flex my-3">
+                <div className="my-3">
                     <img
                         src={homeImages[5].url}
                         style= {{
-                            width:"1000px",
-                            height: "500px",
-                            margin: "0 auto"
+                            width:"70%",
+                            height: "auto",
+                            objectFit: "cover"
                         }}
                         alt="Como_lo_hacemos"
                     />

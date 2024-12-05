@@ -126,4 +126,5 @@ body {
   border: gray solid 1px;
   text-align: start;
   padding: 24px !important;
+  width: 98% !important;
 }

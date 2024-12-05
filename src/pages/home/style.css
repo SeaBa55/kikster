@@ -117,3 +117,14 @@
   /* margin: auto; */
   /* transition: transform 0.7s linear; */
 }
+
+body {
+  overflow-x: hidden;
+}
+
+.service-description {
+  border: gray solid 1px;
+  text-align: start;
+  padding: 24px !important;
+  width: 98% !important;
+}

@@ -42,6 +42,33 @@ const jumbotron = [
     }
 ];
 
+const homeImages = [
+    {
+        title:"victory-pose",
+        url:`${baseURL}/images/Cómo_lo_hacemos.PNG`
+    },
+    {
+        title:"lake-dock",
+        url:`${baseURL}/images/Por_qué_estamos_aquí.PNG`
+    },
+    {
+        title:"group-hiking",
+        url:`${baseURL}/images/Hacia_donde_vamos.PNG`
+    },
+    {
+        title:"sight-sign",
+        url:`${baseURL}/images/Hacia_donde_vamos - Mirador De La Virgen.PNG`
+    },
+    {
+        title: "Group-meeting",
+        url:`${baseURL}/images/Nuestra_gente.PNG`
+    },
+    {
+        title: "Structure-overseeing-ocean",
+        url:`${baseURL}/images/Áreas_de_trabajo.PNG`
+    }
+];
+
 const portfolioImages = [
     {
         title:"kite-surf",
@@ -87,13 +114,28 @@ const aboutImages = [
     },
     {
         title: "lake-island",
-        url:`${baseURL}/images/IMG_7312.JPG`
+        url:`${baseURL}/images/Historia_1.JPG`
     },
     {
         title: "cactus-valley",
         url:`${baseURL}/images/IMG_7309.PNG`
     }
 ];
+
+const logos = {
+    default: {
+        title: "kikster",
+        url:`${baseURL}/kikster_logo.JPG`
+    },
+    nature: {
+        title: "kikster-nature",
+        url:`${baseURL}/kikster_logo_nature.JPG`
+    },
+    products: {
+        title: "kikster-products",
+        url:`${baseURL}/kikster_logo_products.JPG`
+    }
+}
 
 
 const homeIcons = {
@@ -102,4 +144,4 @@ const homeIcons = {
     nat: `${baseURL}/icons/pines-tree-svgrepo-com.svg`
 }
 
-export { images, jumbotron, portfolioImages, projectImages, aboutImages, homeIcons };
+export { images, jumbotron, portfolioImages, projectImages, aboutImages, homeIcons, logos, homeImages };

@@ -137,7 +137,7 @@ const portfolio = [
         id: "Parque La Sauceda Hermosillo",
         title: "Parque La Sauceda Hermosillo | Estado de Sonora México",
         primary_img: `${baseURL}/images/Parque La Sauceda Hermosillo.jpg`,
-        carousel_img: `${baseURL}/images/Parque La Sauceda Hermosillo_3_resize.jpg`,
+        carousel_img: `${baseURL}/images/Parque La Sauceda Hermosillo_3_Resize.jpg`,
         secondary_img: `${baseURL}/images/Parque La Sauceda Hermosillo_2.jpg`,
         location: "Sonora",
         desciption: "Formulación del estudio de operación sostenible para el proyecto de renovación del Parque La Sauceda.  Secretaría de Infraestructura y Desarrollo Urbano del Estado de Sonora – Arimeci Consultoría – Tezontle Arquitectos.",

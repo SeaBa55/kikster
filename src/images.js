@@ -110,7 +110,7 @@ const projectImages = [
 const aboutImages = [
     {
         title: "hiking-mountain-banner",
-        url:`${baseURL}/images/IMG_7307-banner.JPG`
+        url:`${baseURL}/images/IMG_7307-banner.jpg`
     },
     {
         title: "lake-island",
@@ -129,11 +129,11 @@ const logos = {
     },
     nature: {
         title: "kikster-nature",
-        url:`${baseURL}/kikster_logo_nature.JPG`
+        url:`${baseURL}/kikster_logo_nature.jpg`
     },
     products: {
         title: "kikster-products",
-        url:`${baseURL}/kikster_logo_products.JPG`
+        url:`${baseURL}/kikster_logo_products.jpg`
     }
 }
 
